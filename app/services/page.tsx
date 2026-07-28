@@ -104,39 +104,6 @@ const industries = [
   },
 ];
 
-const process = [
-  {
-    number: "01",
-    title: "Discover",
-    description:
-      "We understand your challenges, goals, requirements, and opportunities.",
-  },
-  {
-    number: "02",
-    title: "Design",
-    description:
-      "We create a focused strategy and practical solution blueprint.",
-  },
-  {
-    number: "03",
-    title: "Develop",
-    description:
-      "We build and integrate the solution with quality and agility.",
-  },
-  {
-    number: "04",
-    title: "Deliver",
-    description:
-      "We deploy solutions that create measurable organizational impact.",
-  },
-  {
-    number: "05",
-    title: "Evolve",
-    description:
-      "We continuously improve and support your long-term success.",
-  },
-];
-
 const audiences = [
   {
     title: "Businesses, IT Companies & Enterprises",
@@ -453,42 +420,6 @@ export default function ServicesPage() {
                 <h3 className="mt-4 text-sm font-black leading-5 text-[#073b27]">
                   {industry.title}
                 </h3>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Approach */}
-      <section className="bg-white py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641]">
-              Our Approach
-            </p>
-
-            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27]">
-              From discovery to sustainable progress
-            </h2>
-          </div>
-
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {process.map((step) => (
-              <article
-                key={step.number}
-                className="rounded-2xl border border-green-950/10 bg-[#fbfcfa] p-6 text-center"
-              >
-                <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-[#075031] text-sm font-black text-white">
-                  {step.number}
-                </span>
-
-                <h3 className="mt-5 text-xl font-black text-[#073b27]">
-                  {step.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  {step.description}
-                </p>
               </article>
             ))}
           </div>
