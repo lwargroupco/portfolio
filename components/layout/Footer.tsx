@@ -125,7 +125,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="tel:+923001234567"
+              href="tel:+923144010027"
               className="flex items-start gap-3 transition hover:text-white"
             >
               <svg
@@ -139,7 +139,7 @@ export default function Footer() {
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.28-1.28a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92z" />
               </svg>
 
-              <span>+92 300 1234567</span>
+              <span>+92 314 4010027</span>
             </a>
 
             <p className="flex items-start gap-3">
@@ -158,27 +158,6 @@ export default function Footer() {
               <span>Lahore, Pakistan</span>
             </p>
           </div>
-
-          <a
-            href="/documents/lwar-group-profile.pdf"
-            download
-            className="mt-7 inline-flex w-full items-center justify-center rounded-lg border border-white/35 px-5 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-[#075031] sm:w-auto"
-          >
-            Download Profile
-
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              aria-hidden="true"
-              className="ml-2 h-4 w-4 shrink-0"
-            >
-              <path d="M12 3v12" />
-              <path d="m7 10 5 5 5-5" />
-              <path d="M5 21h14" />
-            </svg>
-          </a>
         </div>
       </div>
 

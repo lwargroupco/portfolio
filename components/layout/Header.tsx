@@ -83,34 +83,13 @@ export default function Header() {
         </nav>
 
         {/* Desktop actions */}
-        <div className="hidden shrink-0 flex-col gap-2 xl:flex">
+        <div className="hidden shrink-0 xl:flex">
           <Link
             href="/contact"
-            className="inline-flex min-w-36 items-center justify-center rounded-lg bg-[#075031] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#0b6740]"
+            className="inline-flex min-w-36 items-center justify-center rounded-lg bg-[#0b6740] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#0e7d4f]"
           >
             Contact Us
           </Link>
-
-          <a
-            href="/documents/lwar-group-profile.pdf"
-            download
-            className="inline-flex min-w-36 items-center justify-center rounded-lg border border-[#176536]/40 bg-white px-5 py-2.5 text-sm font-bold text-[#075031] transition hover:border-[#075031] hover:bg-[#f2f8ef]"
-          >
-            Download Profile
-
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              aria-hidden="true"
-              className="ml-2 h-4 w-4"
-            >
-              <path d="M12 3v12" />
-              <path d="m7 10 5 5 5-5" />
-              <path d="M5 21h14" />
-            </svg>
-          </a>
         </div>
 
         {/* Mobile menu toggle */}

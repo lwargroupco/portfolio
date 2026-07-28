@@ -73,36 +73,14 @@ export default function MobileMenu({
           );
         })}
 
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+        <div className="mt-4">
           <Link
             href="/contact"
             onClick={onClose}
-            className="inline-flex w-full items-center justify-center rounded-xl bg-[#075031] px-6 py-4 text-sm font-bold text-white transition hover:bg-[#0b6740]"
+            className="inline-flex w-full items-center justify-center rounded-xl bg-[#0b6740] px-6 py-4 text-sm font-bold text-white transition hover:bg-[#0e7d4f]"
           >
             Contact Us
           </Link>
-
-          <a
-            href="/documents/lwar-group-profile.pdf"
-            download
-            onClick={onClose}
-            className="inline-flex w-full items-center justify-center rounded-xl border border-[#176536]/35 bg-white px-6 py-4 text-sm font-bold text-[#075031] transition hover:bg-[#f2f8ef]"
-          >
-            Download Profile
-
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              aria-hidden="true"
-              className="ml-2 h-4 w-4 shrink-0"
-            >
-              <path d="M12 3v12" />
-              <path d="m7 10 5 5 5-5" />
-              <path d="M5 21h14" />
-            </svg>
-          </a>
         </div>
       </nav>
     </div>

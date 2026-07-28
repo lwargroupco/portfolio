@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import NetworkField from "../components/ui/NetworkField";
+
 export const metadata: Metadata = {
   title: "LWAR Group",
   description:
@@ -291,6 +293,8 @@ export default function HomePage() {
           className="absolute -right-32 top-0 h-[36rem] w-[36rem] rounded-full bg-green-200/40 blur-3xl"
         />
 
+        <NetworkField className="absolute inset-0 h-full w-full" />
+
         <div className="relative mx-auto grid min-h-[680px] max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:py-20">
           <div className="relative z-10">
             <p className="inline-flex rounded-full border border-green-900/15 bg-white/90 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-[#176536] shadow-sm">
@@ -313,7 +317,7 @@ export default function HomePage() {
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/verticals"
-                className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#075031] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0b6740]"
+                className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0e7d4f]"
               >
                 Explore Our Ecosystem
                 <ArrowIcon />
@@ -389,7 +393,7 @@ export default function HomePage() {
 
             <Link
               href="/about"
-              className="mt-8 inline-flex items-center gap-3 rounded-lg bg-[#075031] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#0b6740]"
+              className="mt-8 inline-flex items-center gap-3 rounded-lg bg-[#0b6740] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#0e7d4f]"
             >
               Learn More About Us
               <ArrowIcon />
@@ -464,7 +468,7 @@ export default function HomePage() {
           <div className="mt-12 text-center">
             <Link
               href="/verticals"
-              className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#075031] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#0b6740]"
+              className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#0e7d4f]"
             >
               View All Verticals
               <ArrowIcon />
@@ -516,7 +520,7 @@ export default function HomePage() {
           <div className="mt-10 text-center">
             <Link
               href="/services"
-              className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#075031] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#0b6740]"
+              className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#0e7d4f]"
             >
               View All Services
               <ArrowIcon />

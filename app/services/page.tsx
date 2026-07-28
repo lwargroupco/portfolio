@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import NetworkField from "../../components/ui/NetworkField";
+
 export const metadata: Metadata = {
   title: "Services",
   description:
@@ -273,6 +275,8 @@ export default function ServicesPage() {
           className="absolute -right-32 top-0 h-[32rem] w-[32rem] rounded-full bg-green-200/35 blur-3xl"
         />
 
+        <NetworkField className="absolute inset-0 h-full w-full" />
+
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:min-h-[590px] lg:grid-cols-[0.9fr_1.1fr] lg:py-20">
           <div className="relative z-10">
             <div className="flex items-center gap-2 text-sm font-medium text-[#176536]">
@@ -306,7 +310,7 @@ export default function ServicesPage() {
 
             <Link
               href="/contact"
-              className="mt-8 inline-flex items-center rounded-lg bg-[#075031] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0b6740]"
+              className="mt-8 inline-flex items-center rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0e7d4f]"
             >
               Discuss Your Requirements
               <span className="ml-3">→</span>

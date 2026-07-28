@@ -176,10 +176,10 @@ export default function ContactPage() {
                     <h3 className="font-black text-[#073b27]">Phone</h3>
 
                     <a
-                      href="tel:+923001234567"
+                      href="tel:+923144010027"
                       className="mt-1 block text-sm text-slate-600 hover:text-[#075031]"
                     >
-                      +92 300 1234567
+                      +92 314 4010027
                     </a>
                   </div>
                 </div>

@@ -18,7 +18,7 @@ type ButtonLinkProps = {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-[#075031] text-white hover:bg-[#0b6740] shadow-md",
+    "bg-[#0b6740] text-white hover:bg-[#0e7d4f] shadow-md",
 
   outline:
     "border border-[#176536]/35 bg-white text-[#075031] hover:bg-[#edf6e9]",

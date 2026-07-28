@@ -1,49 +1,42 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { Send } from "lucide-react";
 
-export default function ContactForm() {
-  const [message, setMessage] = useState("");
+import {
+  sendContactMessage,
+  type ContactFormState,
+} from "../../app/contact/actions";
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+const initialContactFormState: ContactFormState = {
+  status: "idle",
+  message: "",
+};
 
-    const form = new FormData(event.currentTarget);
-
-    const fullName = String(form.get("fullName") ?? "");
-    const email = String(form.get("email") ?? "");
-    const organization = String(form.get("organization") ?? "");
-    const phone = String(form.get("phone") ?? "");
-    const inquiryType = String(form.get("inquiryType") ?? "");
-    const subject = String(form.get("subject") ?? "");
-    const details = String(form.get("details") ?? "");
-
-    const emailSubject = encodeURIComponent(
-      `[${inquiryType || "Website inquiry"}] ${subject}`
-    );
-
-    const emailBody = encodeURIComponent(
-      [
-        `Name: ${fullName}`,
-        `Email: ${email}`,
-        `Organization: ${organization}`,
-        `Phone: ${phone}`,
-        `Inquiry type: ${inquiryType}`,
-        "",
-        details,
-      ].join("\n")
-    );
-
-    setMessage(
-      "Your email application is opening. Review the message and send it to complete your inquiry."
-    );
-
-    window.location.href = `mailto:info@lwar.group?subject=${emailSubject}&body=${emailBody}`;
-  }
+function SubmitButton() {
+  const { pending } = useFormStatus();
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <button
+      type="submit"
+      disabled={pending}
+      className="inline-flex w-full items-center justify-center rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#0e7d4f] disabled:cursor-not-allowed disabled:opacity-70"
+    >
+      {pending ? "Sending..." : "Send Message"}
+      <Send className="ml-3 h-4 w-4" aria-hidden="true" />
+    </button>
+  );
+}
+
+export default function ContactForm() {
+  const [state, formAction] = useActionState(
+    sendContactMessage,
+    initialContactFormState,
+  );
+
+  return (
+    <form action={formAction} className="space-y-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="block">
           <span className="text-sm font-bold text-[#123d2a]">
@@ -165,17 +158,16 @@ export default function ContactForm() {
         </span>
       </label>
 
-      <button
-        type="submit"
-        className="inline-flex w-full items-center justify-center rounded-lg bg-[#075031] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#0b6740]"
-      >
-        Send Message
-        <Send className="ml-3 h-4 w-4" aria-hidden="true" />
-      </button>
+      <SubmitButton />
 
-      {message ? (
-        <p role="status" className="text-sm leading-6 text-[#176536]">
-          {message}
+      {state.status !== "idle" ? (
+        <p
+          role="status"
+          className={`text-sm leading-6 ${
+            state.status === "error" ? "text-red-600" : "text-[#176536]"
+          }`}
+        >
+          {state.message}
         </p>
       ) : null}
     </form>

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import NetworkField from "../../components/ui/NetworkField";
+
 export const metadata: Metadata = {
   title: "Leadership",
   description:
@@ -157,6 +159,8 @@ export default function LeadershipPage() {
           className="absolute -right-32 top-0 h-[34rem] w-[34rem] rounded-full bg-green-200/35 blur-3xl"
         />
 
+        <NetworkField className="absolute inset-0 h-full w-full" />
+
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:min-h-[610px] lg:grid-cols-[0.9fr_1.1fr] lg:py-20">
           <div className="relative z-10">
             <div className="flex items-center gap-2 text-sm font-medium text-[#176536]">
@@ -187,7 +191,7 @@ export default function LeadershipPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#founder"
-                className="inline-flex items-center justify-center rounded-lg bg-[#075031] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0b6740]"
+                className="inline-flex items-center justify-center rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0e7d4f]"
               >
                 Meet Our Founder
                 <span className="ml-3">→</span>

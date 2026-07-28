@@ -11,6 +11,11 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+import CountUpStat from "../../components/verticals/CountUpStat";
+import ProcessTimeline from "../../components/verticals/ProcessTimeline";
+import ServiceList from "../../components/verticals/ServiceList";
+import NetworkField from "../../components/ui/NetworkField";
+
 export const metadata: Metadata = {
   title: "Strategic Verticals",
   description:
@@ -105,6 +110,11 @@ const verticals = [
   },
 ];
 
+const totalServices = verticals.reduce(
+  (sum, vertical) => sum + vertical.services.length,
+  0,
+);
+
 const processSteps = [
   {
     number: "01",
@@ -183,22 +193,6 @@ const strengths: StrengthItem[] = [
   },
 ];
 
-function CheckIcon({ color }: { color: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke={color}
-      strokeWidth="2"
-      aria-hidden="true"
-      className="mt-1 h-4 w-4 shrink-0"
-    >
-      <circle cx="12" cy="12" r="9" />
-      <path d="m8 12 2.5 2.5L16 9" />
-    </svg>
-  );
-}
-
 export default function VerticalsPage() {
   return (
     <>
@@ -221,10 +215,15 @@ export default function VerticalsPage() {
     className="absolute -right-32 top-0 h-[32rem] w-[32rem] rounded-full bg-green-200/25 blur-3xl"
   />
 
+  <NetworkField
+    colors={verticals.map((vertical) => vertical.color)}
+    className="absolute inset-0 h-full w-full"
+  />
+
   <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:min-h-[580px] lg:grid-cols-[1fr_0.85fr] lg:gap-14 lg:px-8 lg:py-16">
     {/* Left content */}
     <div className="relative z-10">
-      <div className="flex items-center gap-2 text-sm font-medium text-[#176536]">
+      <div className="hero-reveal hero-reveal-1 flex items-center gap-2 text-sm font-medium text-[#176536]">
         <Link href="/" className="transition hover:text-[#073b27]">
           Home
         </Link>
@@ -233,30 +232,30 @@ export default function VerticalsPage() {
         <span>Verticals</span>
       </div>
 
-      <h1 className="mt-7 max-w-xl text-4xl font-black leading-[1.06] tracking-tight text-[#081c16] sm:text-5xl lg:text-[64px]">
+      <h1 className="hero-reveal hero-reveal-2 mt-7 max-w-xl text-4xl font-black leading-[1.06] tracking-tight text-[#081c16] sm:text-5xl lg:text-[64px]">
         Our Five
         <span className="mt-1 block text-[#287641]">
           Strategic Verticals
         </span>
       </h1>
 
-      <p className="mt-6 text-lg font-black leading-8 text-[#145c38] sm:text-xl">
+      <p className="hero-reveal hero-reveal-3 mt-6 text-lg font-black leading-8 text-[#145c38] sm:text-xl">
         Five connected verticals.
         <span className="block">One integrated ecosystem.</span>
       </p>
 
-      <div className="mt-6 h-1 w-14 rounded-full bg-[#287641]" />
+      <div className="hero-reveal hero-reveal-4 mt-6 h-1 w-14 rounded-full bg-[#287641]" />
 
-      <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+      <p className="hero-reveal hero-reveal-5 mt-6 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
         Together, we build systems, engineer intelligence, drive growth,
         empower talent, and create knowledge that supports meaningful
         transformation.
       </p>
 
-      <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+      <div className="hero-reveal hero-reveal-6 mt-8 flex flex-col gap-4 sm:flex-row">
         <a
           href="#technologies"
-          className="inline-flex w-full items-center justify-center rounded-lg bg-[#075031] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0b6740] sm:w-auto"
+          className="inline-flex w-full items-center justify-center rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0e7d4f] sm:w-auto"
         >
           Explore Our Verticals
           <span className="ml-3" aria-hidden="true">
@@ -270,6 +269,12 @@ export default function VerticalsPage() {
         >
           Partner With LWAR
         </Link>
+      </div>
+
+      <div className="hero-reveal hero-reveal-7 mt-10 grid max-w-md grid-cols-3 gap-6 border-t border-green-950/10 pt-8">
+        <CountUpStat target={5} label="Verticals" />
+        <CountUpStat target={totalServices} label="Capabilities" />
+        <CountUpStat target={1} label="Ecosystem" />
       </div>
     </div>
 
@@ -355,36 +360,29 @@ export default function VerticalsPage() {
                 </p>
 
                 <h2
-                  className="mt-3 text-center text-2xl font-black leading-tight"
+                  className="mt-3 flex min-h-[88px] items-center justify-center text-center text-2xl font-black leading-tight"
                   style={{ color: vertical.color }}
                 >
                   {vertical.title}
                 </h2>
 
                 <p
-                  className="mt-3 text-center text-xs font-bold uppercase tracking-[0.13em]"
+                  className="mt-3 flex min-h-8 items-center justify-center text-center text-xs font-bold uppercase tracking-[0.13em]"
                   style={{ color: vertical.color }}
                 >
                   {vertical.tagline}
                 </p>
 
-                <p className="mt-6 text-center text-sm leading-6 text-slate-600">
+                <p className="mt-6 min-h-24 text-center text-sm leading-6 text-slate-600">
                   {vertical.description}
                 </p>
 
                 <div className="my-6 h-px bg-green-900/10" />
 
-                <ul className="flex-1 space-y-3">
-                  {vertical.services.map((service) => (
-                    <li
-                      key={service}
-                      className="flex items-start gap-3 text-sm leading-6 text-slate-700"
-                    >
-                      <CheckIcon color={vertical.color} />
-                      <span>{service}</span>
-                    </li>
-                  ))}
-                </ul>
+                <ServiceList
+                  services={vertical.services}
+                  color={vertical.color}
+                />
 
                 <Link
                   href="/contact"
@@ -418,26 +416,7 @@ export default function VerticalsPage() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {processSteps.map((step) => (
-              <article
-                key={step.number}
-                className="rounded-2xl border border-green-950/10 bg-white p-6 text-center shadow-sm"
-              >
-                <span className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-[#075031] text-sm font-black text-white shadow-md">
-                  {step.number}
-                </span>
-
-                <h3 className="mt-5 text-xl font-black text-[#073b27]">
-                  {step.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  {step.description}
-                </p>
-              </article>
-            ))}
-          </div>
+          <ProcessTimeline steps={processSteps} />
         </div>
       </section>
 
