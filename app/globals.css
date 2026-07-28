@@ -210,6 +210,26 @@ section[id] {
   }
 }
 
+/* Slow, smooth breathing pulse for placeholder leadership avatars */
+.animate-avatar-pulse {
+  animation: avatar-pulse 2.8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes avatar-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.35;
+  }
+  70% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-reveal,
   .hero-reveal-1,
