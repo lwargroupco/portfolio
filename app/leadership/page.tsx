@@ -225,70 +225,107 @@ export default function LeadershipPage() {
       </section>
 
       {/* Founder */}
-      <section
-        id="founder"
-        className="scroll-mt-28 bg-white py-20 sm:py-24"
-      >
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="overflow-hidden rounded-3xl border border-green-950/10 bg-gradient-to-r from-[#043b27] to-[#08623a] text-white shadow-xl">
-            <div className="grid lg:grid-cols-[0.72fr_1.28fr]">
-              <div className="border-b border-white/10 p-8 sm:p-10 lg:border-b-0 lg:border-r">
-                <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-green-300">
-                  Founder &amp; Group Director
-                </p>
-
-                <h2 className="mt-4 text-4xl font-black sm:text-5xl">
-                  Aamir Suhail
-                </h2>
-
-                <div className="mt-6 h-1 w-12 rounded-full bg-green-300" />
-
-                <div className="mt-8 flex flex-wrap gap-3">
-                  {founderCapabilities.map((capability) => (
-                    <span
-                      key={capability}
-                      className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold text-emerald-50"
-                    >
-                      {capability}
-                    </span>
-                  ))}
-                </div>
+<section
+  id="founder"
+  className="scroll-mt-28 bg-white py-14 sm:py-16 lg:py-24"
+>
+  <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-[#043b27] via-[#075031] to-[#08713f] text-white shadow-xl">
+      <div className="grid xl:grid-cols-[1fr_1.15fr]">
+        {/* Founder profile */}
+        <div className="border-b border-white/10 p-6 sm:p-8 lg:p-10 xl:border-b-0 xl:border-r">
+          <div className="grid items-start gap-7 sm:grid-cols-[210px_1fr] xl:grid-cols-1 2xl:grid-cols-[220px_1fr]">
+            {/* Founder image */}
+            <div className="mx-auto w-full max-w-[240px] sm:mx-0">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/15 bg-white/10 shadow-xl">
+                <Image
+                  src="/images/leadership/founder.png"
+                  alt="Abdur Rehman, Founder and Group Director of LWAR Group"
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 85vw, (max-width: 1280px) 210px, 220px"
+                  className="object-cover object-top"
+                />
               </div>
+            </div>
 
-              <blockquote className="p-8 sm:p-10 lg:p-12">
-                <span className="text-6xl font-black leading-none text-green-300">
-                  “
-                </span>
+            {/* Founder information */}
+            <div>
+              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-green-300">
+                Founder &amp; Group Director
+              </p>
 
-                <h3 className="mt-2 text-2xl font-black sm:text-3xl">
-                  Founder&apos;s Message
-                </h3>
+              <h2 className="mt-4 text-4xl font-black leading-tight text-white sm:text-5xl">
+                Abdur Rehman
+              </h2>
 
-                <p className="mt-6 max-w-3xl text-base leading-8 text-emerald-50/80">
-                  I founded LWAR Group with the belief that technology,
-                  intelligence, education, and research can transform not only
-                  organizations, but lives. Our mission is to build an
-                  ecosystem where people learn, innovate, and grow together.
-                </p>
+              <div className="mt-6 h-1 w-14 rounded-full bg-green-300" />
 
-                <p className="mt-5 max-w-3xl text-base leading-8 text-emerald-50/80">
-                  We do not simply follow change. We work responsibly with
-                  people and institutions to shape meaningful transformation
-                  and create a better future.
-                </p>
+              <p className="mt-6 text-sm leading-7 text-emerald-50/75">
+                Leading LWAR Group with a focus on technology, intelligence,
+                education, research, and responsible transformation.
+              </p>
 
-                <p className="mt-7 text-xl font-semibold italic text-green-300">
-                  Aamir Suhail
-                </p>
-
-                <p className="mt-1 text-sm text-emerald-50/60">
-                  Founder &amp; Group Director, LWAR Group
-                </p>
-              </blockquote>
+              <div className="mt-7 flex flex-wrap gap-3">
+                {founderCapabilities.map((capability) => (
+                  <span
+                    key={capability}
+                    className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold text-emerald-50"
+                  >
+                    {capability}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </section>
+
+        {/* Founder message */}
+        <blockquote className="relative p-7 sm:p-10 lg:p-12">
+          <span
+            aria-hidden="true"
+            className="absolute right-8 top-5 text-[110px] font-black leading-none text-green-300/15"
+          >
+            “
+          </span>
+
+          <div className="relative z-10">
+            <span className="text-6xl font-black leading-none text-green-300">
+              “
+            </span>
+
+            <h3 className="mt-2 text-3xl font-black text-white sm:text-4xl">
+              Founder&apos;s Message
+            </h3>
+
+            <p className="mt-7 max-w-3xl text-base leading-8 text-emerald-50/80">
+              I founded LWAR Group with the belief that technology,
+              intelligence, education, and research can transform not only
+              organizations, but lives. Our mission is to build an ecosystem
+              where people learn, innovate, and grow together.
+            </p>
+
+            <p className="mt-5 max-w-3xl text-base leading-8 text-emerald-50/80">
+              We do not simply follow change. We work responsibly with people
+              and institutions to shape meaningful transformation and create a
+              better future.
+            </p>
+
+            <div className="mt-8 border-t border-white/10 pt-6">
+              <p className="text-xl font-semibold italic text-green-300">
+                Abdur Rehman
+              </p>
+
+              <p className="mt-1 text-sm text-emerald-50/60">
+                Founder &amp; Group Director, LWAR Group
+              </p>
+            </div>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Principles */}
       <section className="bg-[#f7faf5] py-20 sm:py-24">
