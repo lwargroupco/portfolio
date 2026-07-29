@@ -106,7 +106,7 @@ export default function Footer() {
 
           <div className="mt-5 space-y-4 text-sm text-emerald-50/75">
             <a
-              href="mailto:info@lwar.group"
+              href="mailto:info@lwargroup.com"
               className="flex items-start gap-3 break-all transition hover:text-white"
             >
               <svg
@@ -121,7 +121,7 @@ export default function Footer() {
                 <path d="m4 6 8 6 8-6" />
               </svg>
 
-              <span>info@lwar.group</span>
+              <span>info@lwargroup.com</span>
             </a>
 
             <a
@@ -155,7 +155,7 @@ export default function Footer() {
                 <circle cx="12" cy="10" r="2.5" />
               </svg>
 
-              <span>Lahore, Pakistan</span>
+              <span>Sialkot, Pakistan</span>
             </p>
           </div>
         </div>

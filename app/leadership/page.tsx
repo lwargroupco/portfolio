@@ -66,6 +66,7 @@ type LeadershipArea = {
   icon: string;
   color: string;
   photo?: string;
+  photoPosition?: "center" | "top";
   confirmedName?: string;
   confirmedRole?: string;
 };
@@ -109,6 +110,10 @@ const leadershipAreas: LeadershipArea[] = [
       "Advancing education, curriculum, professional learning, institutional development, and capability building.",
     icon: "/images/icons/verticals/academy.png",
     color: "#a77414",
+    photo: "/images/leadership/founder.png",
+    photoPosition: "top",
+    confirmedName: "Abdur Rehman",
+    confirmedRole: "Academy Lead",
   },
   {
     number: "05",
@@ -217,11 +222,11 @@ export default function LeadershipPage() {
               <span>Leadership</span>
             </div>
 
-            <h1 className="mt-8 text-5xl font-black leading-[1.08] tracking-tight text-[#081c16] dark:text-emerald-50 sm:text-6xl">
+            <h1 className="mt-8 text-4xl font-black leading-[1.08] tracking-tight text-[#081c16] dark:text-emerald-50 sm:text-5xl lg:text-6xl">
               Leadership
             </h1>
 
-            <p className="mt-5 text-xl font-bold leading-8 text-[#287641] dark:text-emerald-400">
+            <p className="mt-5 text-lg font-bold leading-8 text-[#287641] dark:text-emerald-400 sm:text-xl">
               Vision. Experience. Integrity.
             </p>
 
@@ -251,7 +256,7 @@ export default function LeadershipPage() {
             </div>
           </div>
 
-          <div className="relative mx-auto flex w-full max-w-2xl items-center justify-center">
+          <div className="relative mx-auto hidden w-full max-w-2xl items-center justify-center lg:flex">
             <div
               aria-hidden="true"
               className="absolute h-[75%] w-[75%] rounded-full bg-green-200/25 blur-2xl dark:bg-emerald-500/10"
@@ -484,7 +489,7 @@ export default function LeadershipPage() {
                   {area.description}
                 </p>
 
-                <div className="mt-auto flex justify-center pt-6">
+                <div className="mt-auto flex flex-col items-center pt-6">
                   <div className="group relative grid h-20 w-20 place-items-center">
                     <span
                       aria-hidden="true"
@@ -505,10 +510,20 @@ export default function LeadershipPage() {
                         }
                         width={160}
                         height={160}
-                        className="h-full w-full object-cover"
+                        className={`h-full w-full object-cover ${area.photoPosition === "top" ? "object-top" : ""}`}
                       />
                     </div>
                   </div>
+
+                  <p
+                    className={
+                      area.confirmedName
+                        ? "mt-3 text-sm font-bold text-[#073b27] dark:text-emerald-50"
+                        : "mt-3 text-sm italic text-slate-400 dark:text-emerald-100/40"
+                    }
+                  >
+                    {area.confirmedName ?? "Profile coming soon"}
+                  </p>
                 </div>
               </article>
             ))}

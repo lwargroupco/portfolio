@@ -57,7 +57,7 @@ export default function Header() {
         {/* Desktop navigation */}
         <nav
           aria-label="Main navigation"
-          className="hidden items-center gap-5 xl:flex 2xl:gap-7"
+          className="hidden items-center gap-1 rounded-full border border-white/60 bg-white/50 p-1.5 shadow-sm backdrop-blur-md xl:flex dark:border-white/10 dark:bg-white/5"
         >
           {mainNavigation.map((item) => {
             const active = isActive(item.href);
@@ -67,17 +67,13 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`relative inline-flex items-center whitespace-nowrap py-3 text-sm font-semibold transition-colors ${
+                className={`inline-flex items-center whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
                   active
-                    ? "text-[#075031] dark:text-emerald-400"
-                    : "text-[#12291f] hover:text-[#075031] dark:text-emerald-50/85 dark:hover:text-emerald-400"
+                    ? "bg-white text-[#075031] shadow-sm dark:bg-white/15 dark:text-emerald-400"
+                    : "text-[#12291f] hover:bg-black/5 hover:text-[#075031] dark:text-emerald-50/85 dark:hover:bg-white/10 dark:hover:text-emerald-400"
                 }`}
               >
                 {item.name}
-
-                {active ? (
-                  <span className="absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-[#19723f] dark:bg-emerald-400" />
-                ) : null}
               </Link>
             );
           })}

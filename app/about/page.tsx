@@ -648,8 +648,14 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid overflow-hidden rounded-3xl border border-green-950/10 bg-white shadow-lg dark:border-white/10 dark:bg-[#0d2418] lg:grid-cols-[0.65fr_1.35fr]">
             <div className="flex min-h-[360px] items-center justify-center bg-gradient-to-br from-[#dcebd7] to-white p-8 dark:from-[#123023] dark:to-[#0d2418]">
-              <div className="grid h-52 w-52 place-items-center rounded-full border-8 border-white bg-[#075031] text-6xl font-black text-white shadow-xl dark:border-[#0d2418] dark:bg-[#1a9b5c]">
-                AS
+              <div className="relative h-64 w-64 overflow-hidden rounded-full border-8 border-white shadow-xl dark:border-[#0d2418]">
+                <Image
+                  src="/images/leadership/founder.png"
+                  alt="Abdur Rehman, Founder and Group Director of LWAR Group"
+                  fill
+                  sizes="256px"
+                  className="object-cover object-top"
+                />
               </div>
             </div>
 
@@ -674,7 +680,7 @@ export default function AboutPage() {
               </blockquote>
 
               <p className="mt-5 font-black text-[#073b27] dark:text-emerald-50">
-                Aamir Suhail
+                Abdur Rehman
               </p>
 
               <p className="text-sm text-slate-500 dark:text-emerald-100/50">
