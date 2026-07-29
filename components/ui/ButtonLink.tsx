@@ -18,13 +18,13 @@ type ButtonLinkProps = {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-[#0b6740] text-white hover:bg-[#0e7d4f] shadow-md",
+    "bg-[#0b6740] text-white hover:bg-[#0e7d4f] shadow-md dark:bg-[#1a9b5c] dark:hover:bg-[#22b06a]",
 
   outline:
-    "border border-[#176536]/35 bg-white text-[#075031] hover:bg-[#edf6e9]",
+    "border border-[#176536]/35 bg-white text-[#075031] hover:bg-[#edf6e9] dark:border-emerald-400/35 dark:bg-white/5 dark:text-emerald-400 dark:hover:bg-white/10",
 
   white:
-    "bg-white !text-[#075031] shadow-md hover:bg-[#edf6e9]",
+    "bg-white !text-[#075031] shadow-md hover:bg-[#edf6e9] dark:bg-white/10 dark:!text-emerald-400 dark:hover:bg-white/15",
 
   "dark-outline":
     "border border-white/35 text-white hover:bg-white/10",
@@ -66,7 +66,7 @@ export default function ButtonLink({
 if (download) {
   return (
     <a href={href} download className={styles}>
-      <span className={variant === "white" ? "!text-[#075031]" : ""}>
+      <span className={variant === "white" ? "!text-[#075031] dark:!text-emerald-400" : ""}>
         {children}
       </span>
 

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 :root {
   --lwar-dark: #032f20;
   --lwar-primary: #075031;
@@ -10,6 +12,20 @@
   --lwar-surface: #f7faf5;
   --lwar-text: #10251c;
   --lwar-muted: #5d6b63;
+  --pagehero-dot: rgba(23, 101, 54, 0.22);
+}
+
+:root[data-theme="dark"] {
+  --lwar-dark: #04160e;
+  --lwar-primary: #1a9b5c;
+  --lwar-green: #22b06a;
+  --lwar-accent: #5cd691;
+  --lwar-light: #0f2a1c;
+  --lwar-background: #071a12;
+  --lwar-surface: #0d2418;
+  --lwar-text: #eef6f0;
+  --lwar-muted: #93ab9d;
+  --pagehero-dot: rgba(150, 210, 175, 0.22);
 }
 
 * {
@@ -25,6 +41,9 @@ body {
   overflow-x: hidden;
   background: var(--lwar-background);
   color: var(--lwar-text);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
 }
 
 main {
@@ -66,6 +85,11 @@ section[id] {
   color: #032f20;
 }
 
+:root[data-theme="dark"] ::selection {
+  background: #1a9b5c;
+  color: #eef6f0;
+}
+
 /* Accessible keyboard focus */
 :focus-visible {
   outline: 3px solid rgba(25, 114, 63, 0.45);
@@ -89,6 +113,19 @@ section[id] {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #397744;
+}
+
+:root[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #0d2418;
+}
+
+:root[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  border-color: #0d2418;
+  background: #2c5f43;
+}
+
+:root[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #3e7d5a;
 }
 
 /* Hero entrance sequence (verticals page) */
@@ -175,6 +212,10 @@ section[id] {
     z-index: 0;
   }
 
+  :root[data-theme="dark"] .process-track {
+    background: rgba(180, 220, 195, 0.14);
+  }
+
   .process-track-fill {
     height: 100%;
     width: 0%;
@@ -208,6 +249,16 @@ section[id] {
     transform: scale(1);
     box-shadow: 0 0 0 8px rgba(11, 103, 64, 0);
   }
+}
+
+/* Per-item brand-color text (inline style --accent-color) that stays
+   readable in dark mode by lightening toward white via color-mix. */
+.accent-text {
+  color: var(--accent-color);
+}
+
+:root[data-theme="dark"] .accent-text {
+  color: color-mix(in srgb, var(--accent-color) 62%, white 38%);
 }
 
 /* Slow, smooth breathing pulse for placeholder leadership avatars */

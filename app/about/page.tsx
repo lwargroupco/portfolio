@@ -335,7 +335,7 @@ function IconCircle({
       className={`grid h-14 w-14 shrink-0 place-items-center rounded-full border shadow-sm ${
         dark
           ? "border-white/20 bg-white/10 text-white"
-          : "border-green-900/15 bg-[#edf6e9] text-[#075031]"
+          : "border-green-900/15 bg-[#edf6e9] text-[#075031] dark:border-white/15 dark:bg-white/10 dark:text-emerald-400"
       }`}
     >
       <LineIcon type={type} />
@@ -347,28 +347,28 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#f8faf5] to-[#eaf3e7]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#f8faf5] to-[#eaf3e7] dark:from-[#071a12] dark:via-[#0a2117] dark:to-[#0d2a1c]">
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-25"
+          className="absolute inset-0 opacity-25 dark:opacity-[0.15]"
           style={{
             backgroundImage:
-              "radial-gradient(circle, rgba(23,101,54,0.22) 1px, transparent 1px)",
+              "radial-gradient(circle, var(--pagehero-dot) 1px, transparent 1px)",
             backgroundSize: "30px 30px",
           }}
         />
 
         <div
           aria-hidden="true"
-          className="absolute -right-32 top-0 h-[34rem] w-[34rem] rounded-full bg-green-200/35 blur-3xl"
+          className="absolute -right-32 top-0 h-[34rem] w-[34rem] rounded-full bg-green-200/35 blur-3xl dark:bg-emerald-500/10"
         />
 
         <NetworkField className="absolute inset-0 h-full w-full" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:min-h-[610px] lg:grid-cols-[0.9fr_1.1fr] lg:py-20">
           <div className="relative z-10">
-            <div className="flex items-center gap-2 text-sm font-medium text-[#176536]">
-              <Link href="/" className="transition hover:text-[#073b27]">
+            <div className="flex items-center gap-2 text-sm font-medium text-[#176536] dark:text-emerald-400/80">
+              <Link href="/" className="transition hover:text-[#073b27] dark:hover:text-emerald-300">
                 Home
               </Link>
 
@@ -376,20 +376,20 @@ export default function AboutPage() {
               <span>About LWAR Group</span>
             </div>
 
-            <h1 className="mt-8 text-5xl font-black leading-[1.08] tracking-tight text-[#081c16] sm:text-6xl">
+            <h1 className="mt-8 text-5xl font-black leading-[1.08] tracking-tight text-[#081c16] dark:text-emerald-50 sm:text-6xl">
               About
-              <span className="mt-2 block text-[#287641]">
+              <span className="mt-2 block text-[#287641] dark:text-emerald-400">
                 LWAR Group
               </span>
             </h1>
 
-            <p className="mt-5 text-xl font-bold leading-8 text-[#123d2a]">
+            <p className="mt-5 text-xl font-bold leading-8 text-[#123d2a] dark:text-emerald-100/85">
               One group. Five verticals. Shared purpose.
             </p>
 
-            <div className="mt-5 h-1 w-12 rounded-full bg-[#287641]" />
+            <div className="mt-5 h-1 w-12 rounded-full bg-[#287641] dark:bg-emerald-400" />
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-slate-600">
+            <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 dark:text-emerald-100/60">
               LWAR Group is an integrated ecosystem combining technology,
               artificial intelligence, digital growth, advanced education, and
               research to build intelligent systems and empower people.
@@ -397,7 +397,7 @@ export default function AboutPage() {
 
             <a
               href="#our-purpose"
-              className="mt-8 inline-flex items-center rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0e7d4f]"
+              className="mt-8 inline-flex items-center rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0e7d4f] dark:bg-[#1a9b5c] dark:hover:bg-[#22b06a]"
             >
               Discover LWAR Group
               <span className="ml-3">→</span>
@@ -407,7 +407,7 @@ export default function AboutPage() {
           <div className="relative mx-auto flex w-full max-w-2xl items-center justify-center">
             <div
               aria-hidden="true"
-              className="absolute h-[75%] w-[75%] rounded-full bg-green-200/25 blur-2xl"
+              className="absolute h-[75%] w-[75%] rounded-full bg-green-200/25 blur-2xl dark:bg-emerald-500/10"
             />
 
             <Image
@@ -416,7 +416,7 @@ export default function AboutPage() {
               width={1000}
               height={800}
               priority
-              className="relative z-10 h-auto max-h-[520px] w-full object-contain mix-blend-multiply"
+              className="relative z-10 h-auto max-h-[520px] w-full object-contain mix-blend-multiply dark:mix-blend-normal"
             />
           </div>
         </div>
@@ -424,20 +424,20 @@ export default function AboutPage() {
 
       {/* Statistics */}
       <section className="relative z-10 -mt-10 px-5 sm:px-8">
-        <div className="mx-auto grid max-w-5xl overflow-hidden rounded-2xl border border-green-950/10 bg-white shadow-xl sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-5xl overflow-hidden rounded-2xl border border-green-950/10 bg-white shadow-xl dark:border-white/10 dark:bg-[#0d2418] sm:grid-cols-2 lg:grid-cols-4">
           {statistics.map((item) => (
             <article
               key={item.label}
-              className="flex items-center gap-4 border-b border-r border-green-950/10 p-6 last:border-r-0"
+              className="flex items-center gap-4 border-b border-r border-green-950/10 p-6 last:border-r-0 dark:border-white/10"
             >
               <IconCircle type={item.icon as IconType} />
 
               <div>
-                <strong className="block text-xl font-black text-[#073b27]">
+                <strong className="block text-xl font-black text-[#073b27] dark:text-emerald-50">
                   {item.value}
                 </strong>
 
-                <span className="text-sm text-slate-600">{item.label}</span>
+                <span className="text-sm text-slate-600 dark:text-emerald-100/60">{item.label}</span>
               </div>
             </article>
           ))}
@@ -447,19 +447,19 @@ export default function AboutPage() {
       {/* Purpose, vision and mission */}
       <section
         id="our-purpose"
-        className="scroll-mt-28 bg-white pb-20 pt-28 sm:pb-24 sm:pt-32"
+        className="scroll-mt-28 bg-white pb-20 pt-28 dark:bg-[#071a12] sm:pb-24 sm:pt-32"
       >
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641]">
+            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641] dark:text-emerald-400">
               Our Direction
             </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] sm:text-5xl">
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] dark:text-emerald-50 sm:text-5xl">
               Purpose, vision, and mission
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-emerald-100/60">
               Our direction explains why LWAR exists, what we aim to become,
               and how we intend to create value.
             </p>
@@ -486,28 +486,28 @@ export default function AboutPage() {
               </p>
             </article>
 
-            <article className="rounded-3xl border border-green-950/10 bg-[#fbfcfa] p-8 shadow-sm sm:p-10">
+            <article className="rounded-3xl border border-green-950/10 bg-[#fbfcfa] p-8 shadow-sm dark:border-white/10 dark:bg-[#0d2418] sm:p-10">
               <IconCircle type="vision" />
 
-              <h3 className="mt-6 text-3xl font-black text-[#073b27]">
+              <h3 className="mt-6 text-3xl font-black text-[#073b27] dark:text-emerald-50">
                 Our Vision
               </h3>
 
-              <p className="mt-5 leading-8 text-slate-600">
+              <p className="mt-5 leading-8 text-slate-600 dark:text-emerald-100/60">
                 To become a globally recognized group leading intelligent
                 transformation through technology, digital growth, education,
                 and research.
               </p>
             </article>
 
-            <article className="rounded-3xl border border-green-950/10 bg-[#fbfcfa] p-8 shadow-sm sm:p-10">
+            <article className="rounded-3xl border border-green-950/10 bg-[#fbfcfa] p-8 shadow-sm dark:border-white/10 dark:bg-[#0d2418] sm:p-10">
               <IconCircle type="mission" />
 
-              <h3 className="mt-6 text-3xl font-black text-[#073b27]">
+              <h3 className="mt-6 text-3xl font-black text-[#073b27] dark:text-emerald-50">
                 Our Mission
               </h3>
 
-              <p className="mt-5 leading-8 text-slate-600">
+              <p className="mt-5 leading-8 text-slate-600 dark:text-emerald-100/60">
                 To engineer intelligence, empower people, advance education,
                 and create knowledge that supports sustainable progress.
               </p>
@@ -517,18 +517,18 @@ export default function AboutPage() {
       </section>
 
       {/* Core values */}
-      <section className="bg-[#f7faf5] py-20 sm:py-24">
+      <section className="bg-[#f7faf5] py-20 dark:bg-[#0a2117] sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641]">
+            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641] dark:text-emerald-400">
               Our Core Values
             </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] sm:text-5xl">
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] dark:text-emerald-50 sm:text-5xl">
               Principles behind every decision
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-emerald-100/60">
               These values guide how LWAR Group works with clients, partners,
               institutions, communities, and one another.
             </p>
@@ -538,21 +538,21 @@ export default function AboutPage() {
             {coreValues.map((value) => (
               <article
                 key={value.number}
-                className="rounded-2xl border border-green-950/10 bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className="rounded-2xl border border-green-950/10 bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-[#0d2418]"
               >
                 <div className="flex justify-center">
                   <IconCircle type={value.icon as IconType} />
                 </div>
 
-                <p className="mt-5 text-xs font-black text-[#287641]">
+                <p className="mt-5 text-xs font-black text-[#287641] dark:text-emerald-400">
                   {value.number}
                 </p>
 
-                <h3 className="mt-2 text-lg font-black text-[#073b27]">
+                <h3 className="mt-2 text-lg font-black text-[#073b27] dark:text-emerald-50">
                   {value.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-emerald-100/60">
                   {value.description}
                 </p>
               </article>
@@ -563,32 +563,32 @@ export default function AboutPage() {
 
       {/* Ecosystem */}
       {/* Ecosystem */}
-<section className="bg-white py-14 sm:py-16 lg:py-20">
+<section className="bg-white py-14 dark:bg-[#071a12] sm:py-16 lg:py-20">
   <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div className="grid items-start gap-8 rounded-3xl border border-green-950/10 bg-[#fbfcfa] p-5 shadow-sm sm:p-7 lg:grid-cols-[0.72fr_1.28fr] lg:p-8">
+    <div className="grid items-start gap-8 rounded-3xl border border-green-950/10 bg-[#fbfcfa] p-5 shadow-sm dark:border-white/10 dark:bg-[#0d2418] sm:p-7 lg:grid-cols-[0.72fr_1.28fr] lg:p-8">
       {/* Left content */}
       <div>
-        <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#287641]">
+        <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#287641] dark:text-emerald-400">
           Our Ecosystem
         </p>
 
-        <h2 className="mt-4 text-3xl font-black text-[#073b27] sm:text-4xl">
+        <h2 className="mt-4 text-3xl font-black text-[#073b27] dark:text-emerald-50 sm:text-4xl">
           One purpose. Five connected verticals.
         </h2>
 
-        <p className="mt-5 leading-8 text-slate-600">
+        <p className="mt-5 leading-8 text-slate-600 dark:text-emerald-100/60">
           Each LWAR vertical provides specialist expertise while collaborating
           across the group to deliver complete solutions.
         </p>
 
-        <p className="mt-5 leading-8 text-slate-600">
+        <p className="mt-5 leading-8 text-slate-600 dark:text-emerald-100/60">
           This structure allows us to connect systems, intelligence, growth,
           education, and research within one unified approach.
         </p>
 
         <Link
           href="/verticals"
-          className="mt-7 inline-flex w-full items-center justify-center rounded-lg bg-[#0b6740] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#0e7d4f] sm:w-auto"
+          className="mt-7 inline-flex w-full items-center justify-center rounded-lg bg-[#0b6740] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#0e7d4f] dark:bg-[#1a9b5c] dark:hover:bg-[#22b06a] sm:w-auto"
         >
           Explore Our Verticals
           <span className="ml-3" aria-hidden="true">
@@ -602,7 +602,7 @@ export default function AboutPage() {
         {verticals.map((vertical) => (
           <article
             key={vertical.number}
-            className="flex h-auto flex-col items-center rounded-2xl border border-green-950/10 bg-white px-4 py-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+            className="flex h-auto flex-col items-center rounded-2xl border border-green-950/10 bg-white px-4 py-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-[#0f261a]"
             style={{
               borderTopWidth: "4px",
               borderTopColor: vertical.color,
@@ -620,20 +620,20 @@ export default function AboutPage() {
             </div>
 
             <p
-              className="mt-5 text-sm font-black"
-              style={{ color: vertical.color }}
+              className="accent-text mt-5 text-sm font-black"
+              style={{ "--accent-color": vertical.color } as React.CSSProperties}
             >
               {vertical.number}
             </p>
 
             <h3
-              className="mt-2 text-base font-black leading-6"
-              style={{ color: vertical.color }}
+              className="accent-text mt-2 text-base font-black leading-6"
+              style={{ "--accent-color": vertical.color } as React.CSSProperties}
             >
               {vertical.title}
             </h3>
 
-            <p className="mt-2 text-xs font-semibold leading-5 text-slate-500">
+            <p className="mt-2 text-xs font-semibold leading-5 text-slate-500 dark:text-emerald-100/50">
               {vertical.tagline}
             </p>
           </article>
@@ -644,46 +644,46 @@ export default function AboutPage() {
 </section>
 
       {/* Founder */}
-      <section className="bg-[#f7faf5] py-20 sm:py-24">
+      <section className="bg-[#f7faf5] py-20 dark:bg-[#0a2117] sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="grid overflow-hidden rounded-3xl border border-green-950/10 bg-white shadow-lg lg:grid-cols-[0.65fr_1.35fr]">
-            <div className="flex min-h-[360px] items-center justify-center bg-gradient-to-br from-[#dcebd7] to-white p-8">
-              <div className="grid h-52 w-52 place-items-center rounded-full border-8 border-white bg-[#075031] text-6xl font-black text-white shadow-xl">
+          <div className="grid overflow-hidden rounded-3xl border border-green-950/10 bg-white shadow-lg dark:border-white/10 dark:bg-[#0d2418] lg:grid-cols-[0.65fr_1.35fr]">
+            <div className="flex min-h-[360px] items-center justify-center bg-gradient-to-br from-[#dcebd7] to-white p-8 dark:from-[#123023] dark:to-[#0d2418]">
+              <div className="grid h-52 w-52 place-items-center rounded-full border-8 border-white bg-[#075031] text-6xl font-black text-white shadow-xl dark:border-[#0d2418] dark:bg-[#1a9b5c]">
                 AS
               </div>
             </div>
 
             <div className="p-8 sm:p-12">
-              <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#287641]">
+              <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#287641] dark:text-emerald-400">
                 Leadership
               </p>
 
-              <h2 className="mt-4 text-3xl font-black text-[#073b27] sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-black text-[#073b27] dark:text-emerald-50 sm:text-4xl">
                 Founded on purpose. Driven by impact.
               </h2>
 
-              <p className="mt-6 leading-8 text-slate-600">
+              <p className="mt-6 leading-8 text-slate-600 dark:text-emerald-100/60">
                 LWAR Group was founded with a vision to create an ecosystem
                 that helps people and organizations grow through intelligent
                 solutions, future-ready education, and meaningful research.
               </p>
 
-              <blockquote className="mt-7 border-l-4 border-[#287641] pl-5 text-lg italic leading-8 text-[#123d2a]">
+              <blockquote className="mt-7 border-l-4 border-[#287641] pl-5 text-lg italic leading-8 text-[#123d2a] dark:border-emerald-400 dark:text-emerald-100/85">
                 “Technology, intelligence, education, and research should work
                 together to empower people and build a better future.”
               </blockquote>
 
-              <p className="mt-5 font-black text-[#073b27]">
+              <p className="mt-5 font-black text-[#073b27] dark:text-emerald-50">
                 Aamir Suhail
               </p>
 
-              <p className="text-sm text-slate-500">
+              <p className="text-sm text-slate-500 dark:text-emerald-100/50">
                 Founder &amp; Group Director
               </p>
 
               <Link
                 href="/leadership"
-                className="mt-7 inline-flex items-center rounded-lg bg-[#0b6740] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#0e7d4f]"
+                className="mt-7 inline-flex items-center rounded-lg bg-[#0b6740] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#0e7d4f] dark:bg-[#1a9b5c] dark:hover:bg-[#22b06a]"
               >
                 Meet Our Founder
                 <span className="ml-3">→</span>
@@ -694,18 +694,18 @@ export default function AboutPage() {
       </section>
 
       {/* Roadmap */}
-      <section className="bg-white py-20 sm:py-24">
+      <section className="bg-white py-20 dark:bg-[#071a12] sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641]">
+            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641] dark:text-emerald-400">
               Our Future Roadmap
             </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] sm:text-5xl">
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] dark:text-emerald-50 sm:text-5xl">
               Building the ecosystem step by step
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-emerald-100/60">
               The roadmap provides a flexible direction for the future
               development of LWAR Group.
             </p>
@@ -715,23 +715,23 @@ export default function AboutPage() {
             {roadmap.map((item) => (
               <article
                 key={item.number}
-                className="relative rounded-2xl border border-green-950/10 bg-[#fbfcfa] p-6"
+                className="relative rounded-2xl border border-green-950/10 bg-[#fbfcfa] p-6 dark:border-white/10 dark:bg-[#0d2418]"
               >
-                <span className="absolute right-5 top-5 text-5xl font-black text-green-900/5">
+                <span className="absolute right-5 top-5 text-5xl font-black text-green-900/5 dark:text-white/5">
                   {item.number}
                 </span>
 
                 <IconCircle type={item.icon as IconType} />
 
-                <p className="mt-5 text-xs font-black text-[#287641]">
+                <p className="mt-5 text-xs font-black text-[#287641] dark:text-emerald-400">
                   PHASE {item.number}
                 </p>
 
-                <h3 className="mt-2 text-xl font-black text-[#073b27]">
+                <h3 className="mt-2 text-xl font-black text-[#073b27] dark:text-emerald-50">
                   {item.title}
                 </h3>
 
-                <p className="mt-4 text-sm leading-6 text-slate-600">
+                <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-emerald-100/60">
                   {item.description}
                 </p>
               </article>
@@ -741,8 +741,8 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#f7faf5] px-5 py-20 sm:px-8 sm:py-24">
-        <div className="mx-auto flex max-w-7xl flex-col gap-7 rounded-3xl bg-gradient-to-r from-[#043b27] to-[#08623a] px-7 py-12 text-white shadow-xl sm:px-12 lg:flex-row lg:items-center lg:justify-between">
+      <section className="bg-[#f7faf5] px-5 py-20 dark:bg-[#0a2117] sm:px-8 sm:py-24">
+        <div className="mx-auto flex max-w-7xl flex-col gap-7 rounded-3xl bg-gradient-to-r from-[#043b27] to-[#08623a] px-7 py-12 text-white shadow-xl ring-1 ring-white/0 dark:ring-white/10 sm:px-12 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-black sm:text-4xl">
               Let&apos;s build the future—together.

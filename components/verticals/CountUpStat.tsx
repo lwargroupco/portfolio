@@ -58,12 +58,12 @@ export default function CountUpStat({
     <div className="text-center sm:text-left">
       <span
         ref={ref}
-        className="block font-mono text-3xl font-black tabular-nums text-[#0b6740] sm:text-4xl"
+        className="block font-mono text-3xl font-black tabular-nums text-[#0b6740] dark:text-[#22b06a] sm:text-4xl"
       >
         {value}
         {suffix}
       </span>
-      <span className="mt-1 block text-xs font-semibold uppercase tracking-[0.08em] text-slate-500">
+      <span className="mt-1 block text-xs font-semibold uppercase tracking-[0.08em] text-slate-500 dark:text-emerald-100/50">
         {label}
       </span>
     </div>

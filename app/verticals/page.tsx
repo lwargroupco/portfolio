@@ -197,14 +197,14 @@ export default function VerticalsPage() {
   return (
     <>
 {/* Hero */}
-<section className="relative overflow-hidden bg-gradient-to-br from-white via-[#f8faf5] to-[#e8f6e8]">
+<section className="relative overflow-hidden bg-gradient-to-br from-white via-[#f8faf5] to-[#e8f6e8] dark:from-[#071a12] dark:via-[#0a2117] dark:to-[#0d2a1c]">
   {/* Background dots */}
   <div
     aria-hidden="true"
-    className="absolute inset-0 opacity-25"
+    className="absolute inset-0 opacity-25 dark:opacity-[0.15]"
     style={{
       backgroundImage:
-        "radial-gradient(circle, rgba(23,101,54,0.2) 1px, transparent 1px)",
+        "radial-gradient(circle, var(--pagehero-dot) 1px, transparent 1px)",
       backgroundSize: "30px 30px",
     }}
   />
@@ -212,7 +212,7 @@ export default function VerticalsPage() {
   {/* Background glow */}
   <div
     aria-hidden="true"
-    className="absolute -right-32 top-0 h-[32rem] w-[32rem] rounded-full bg-green-200/25 blur-3xl"
+    className="absolute -right-32 top-0 h-[32rem] w-[32rem] rounded-full bg-green-200/25 blur-3xl dark:bg-emerald-500/10"
   />
 
   <NetworkField
@@ -223,8 +223,8 @@ export default function VerticalsPage() {
   <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:min-h-[580px] lg:grid-cols-[1fr_0.85fr] lg:gap-14 lg:px-8 lg:py-16">
     {/* Left content */}
     <div className="relative z-10">
-      <div className="hero-reveal hero-reveal-1 flex items-center gap-2 text-sm font-medium text-[#176536]">
-        <Link href="/" className="transition hover:text-[#073b27]">
+      <div className="hero-reveal hero-reveal-1 flex items-center gap-2 text-sm font-medium text-[#176536] dark:text-emerald-400/80">
+        <Link href="/" className="transition hover:text-[#073b27] dark:hover:text-emerald-300">
           Home
         </Link>
 
@@ -232,21 +232,21 @@ export default function VerticalsPage() {
         <span>Verticals</span>
       </div>
 
-      <h1 className="hero-reveal hero-reveal-2 mt-7 max-w-xl text-4xl font-black leading-[1.06] tracking-tight text-[#081c16] sm:text-5xl lg:text-[64px]">
+      <h1 className="hero-reveal hero-reveal-2 mt-7 max-w-xl text-4xl font-black leading-[1.06] tracking-tight text-[#081c16] dark:text-emerald-50 sm:text-5xl lg:text-[64px]">
         Our Five
-        <span className="mt-1 block text-[#287641]">
+        <span className="mt-1 block text-[#287641] dark:text-emerald-400">
           Strategic Verticals
         </span>
       </h1>
 
-      <p className="hero-reveal hero-reveal-3 mt-6 text-lg font-black leading-8 text-[#145c38] sm:text-xl">
+      <p className="hero-reveal hero-reveal-3 mt-6 text-lg font-black leading-8 text-[#145c38] dark:text-emerald-100/85 sm:text-xl">
         Five connected verticals.
         <span className="block">One integrated ecosystem.</span>
       </p>
 
-      <div className="hero-reveal hero-reveal-4 mt-6 h-1 w-14 rounded-full bg-[#287641]" />
+      <div className="hero-reveal hero-reveal-4 mt-6 h-1 w-14 rounded-full bg-[#287641] dark:bg-emerald-400" />
 
-      <p className="hero-reveal hero-reveal-5 mt-6 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+      <p className="hero-reveal hero-reveal-5 mt-6 max-w-xl text-base leading-8 text-slate-600 dark:text-emerald-100/60 sm:text-lg">
         Together, we build systems, engineer intelligence, drive growth,
         empower talent, and create knowledge that supports meaningful
         transformation.
@@ -255,7 +255,7 @@ export default function VerticalsPage() {
       <div className="hero-reveal hero-reveal-6 mt-8 flex flex-col gap-4 sm:flex-row">
         <a
           href="#technologies"
-          className="inline-flex w-full items-center justify-center rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0e7d4f] sm:w-auto"
+          className="inline-flex w-full items-center justify-center rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0e7d4f] dark:bg-[#1a9b5c] dark:hover:bg-[#22b06a] sm:w-auto"
         >
           Explore Our Verticals
           <span className="ml-3" aria-hidden="true">
@@ -265,13 +265,13 @@ export default function VerticalsPage() {
 
         <Link
           href="/contact"
-          className="inline-flex w-full items-center justify-center rounded-lg border border-[#176536]/30 bg-white px-7 py-4 text-sm font-bold text-[#075031] transition hover:bg-[#edf6e9] sm:w-auto"
+          className="inline-flex w-full items-center justify-center rounded-lg border border-[#176536]/30 bg-white px-7 py-4 text-sm font-bold text-[#075031] transition hover:bg-[#edf6e9] dark:border-emerald-400/35 dark:bg-white/5 dark:text-emerald-400 dark:hover:bg-white/10 sm:w-auto"
         >
           Partner With LWAR
         </Link>
       </div>
 
-      <div className="hero-reveal hero-reveal-7 mt-10 grid max-w-md grid-cols-3 gap-6 border-t border-green-950/10 pt-8">
+      <div className="hero-reveal hero-reveal-7 mt-10 grid max-w-md grid-cols-3 gap-6 border-t border-green-950/10 pt-8 dark:border-white/10">
         <CountUpStat target={5} label="Verticals" />
         <CountUpStat target={totalServices} label="Capabilities" />
         <CountUpStat target={1} label="Ecosystem" />
@@ -282,12 +282,12 @@ export default function VerticalsPage() {
     <div className="relative mx-auto flex w-full max-w-[520px] items-center justify-center">
       <div
         aria-hidden="true"
-        className="absolute h-[88%] w-[88%] rounded-full border border-green-900/10 bg-white/20"
+        className="absolute h-[88%] w-[88%] rounded-full border border-green-900/10 bg-white/20 dark:border-white/10 dark:bg-white/5"
       />
 
       <div
         aria-hidden="true"
-        className="absolute h-[68%] w-[68%] rounded-full bg-green-200/25 blur-2xl"
+        className="absolute h-[68%] w-[68%] rounded-full bg-green-200/25 blur-2xl dark:bg-emerald-500/10"
       />
 
       <Image
@@ -306,19 +306,19 @@ export default function VerticalsPage() {
       {/* Five verticals */}
       <section
         id="our-verticals"
-        className="scroll-mt-28 bg-white py-20 sm:py-24"
+        className="scroll-mt-28 bg-white py-20 dark:bg-[#071a12] sm:py-24"
       >
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641]">
+            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641] dark:text-emerald-400">
               Our Five Verticals
             </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] sm:text-5xl">
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] dark:text-emerald-50 sm:text-5xl">
               Specialist expertise. Shared purpose.
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-emerald-100/60">
               Each vertical provides focused capabilities while collaborating
               across the complete LWAR Group ecosystem.
             </p>
@@ -329,7 +329,7 @@ export default function VerticalsPage() {
               <article
                 key={vertical.id}
                 id={vertical.id}
-                className="flex min-h-[625px] scroll-mt-32 flex-col rounded-2xl border border-green-950/10 bg-white px-6 pb-7 pt-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+                className="flex min-h-[625px] scroll-mt-32 flex-col rounded-2xl border border-green-950/10 bg-white px-6 pb-7 pt-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-white/10 dark:bg-[#0d2418]"
                 style={{
                   borderTopWidth: "4px",
                   borderTopColor: vertical.color,
@@ -353,31 +353,31 @@ export default function VerticalsPage() {
                 </div>
 
                 <p
-                  className="mt-6 text-center text-xs font-black"
-                  style={{ color: vertical.color }}
+                  className="accent-text mt-6 text-center text-xs font-black"
+                  style={{ "--accent-color": vertical.color } as React.CSSProperties}
                 >
                   {vertical.number}
                 </p>
 
                 <h2
-                  className="mt-3 flex min-h-[88px] items-center justify-center text-center text-2xl font-black leading-tight"
-                  style={{ color: vertical.color }}
+                  className="accent-text mt-3 flex min-h-[88px] items-center justify-center text-center text-2xl font-black leading-tight"
+                  style={{ "--accent-color": vertical.color } as React.CSSProperties}
                 >
                   {vertical.title}
                 </h2>
 
                 <p
-                  className="mt-3 flex min-h-8 items-center justify-center text-center text-xs font-bold uppercase tracking-[0.13em]"
-                  style={{ color: vertical.color }}
+                  className="accent-text mt-3 flex min-h-8 items-center justify-center text-center text-xs font-bold uppercase tracking-[0.13em]"
+                  style={{ "--accent-color": vertical.color } as React.CSSProperties}
                 >
                   {vertical.tagline}
                 </p>
 
-                <p className="mt-6 min-h-24 text-center text-sm leading-6 text-slate-600">
+                <p className="mt-6 min-h-24 text-center text-sm leading-6 text-slate-600 dark:text-emerald-100/60">
                   {vertical.description}
                 </p>
 
-                <div className="my-6 h-px bg-green-900/10" />
+                <div className="my-6 h-px bg-green-900/10 dark:bg-white/10" />
 
                 <ServiceList
                   services={vertical.services}
@@ -386,8 +386,8 @@ export default function VerticalsPage() {
 
                 <Link
                   href="/contact"
-                  className="mt-7 inline-flex items-center justify-center text-sm font-bold"
-                  style={{ color: vertical.color }}
+                  className="accent-text mt-7 inline-flex items-center justify-center text-sm font-bold"
+                  style={{ "--accent-color": vertical.color } as React.CSSProperties}
                 >
                   Explore Vertical
                   <span className="ml-3">→</span>
@@ -399,18 +399,18 @@ export default function VerticalsPage() {
       </section>
 
       {/* Collaboration process */}
-      <section className="bg-[#f7faf5] py-20 sm:py-24">
+      <section className="bg-[#f7faf5] py-20 dark:bg-[#0a2117] sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641]">
+            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641] dark:text-emerald-400">
               How We Work Together
             </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] sm:text-5xl">
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] dark:text-emerald-50 sm:text-5xl">
               One ecosystem. Infinite possibilities.
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-emerald-100/60">
               Our verticals collaborate through a structured and practical
               transformation process.
             </p>
@@ -421,8 +421,8 @@ export default function VerticalsPage() {
       </section>
 
       {/* Strengths */}
-<section className="bg-white px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-  <div className="relative mx-auto w-full max-w-7xl overflow-hidden rounded-3xl bg-gradient-to-br from-[#043b27] via-[#075031] to-[#08713f] px-5 py-8 shadow-xl sm:px-8 sm:py-10 lg:px-10">
+<section className="bg-white px-4 py-14 dark:bg-[#071a12] sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+  <div className="relative mx-auto w-full max-w-7xl overflow-hidden rounded-3xl bg-gradient-to-br from-[#043b27] via-[#075031] to-[#08713f] px-5 py-8 shadow-xl ring-1 ring-white/0 dark:ring-white/10 sm:px-8 sm:py-10 lg:px-10">
     {/* Decorative glow */}
     <div
       aria-hidden="true"
@@ -476,8 +476,8 @@ export default function VerticalsPage() {
 </section>
 
       {/* CTA */}
-      <section className="bg-[#f7faf5] px-5 py-20 sm:px-8 sm:py-24">
-        <div className="mx-auto flex max-w-7xl flex-col gap-7 rounded-3xl bg-[#075031] px-7 py-12 text-white shadow-xl sm:px-12 lg:flex-row lg:items-center lg:justify-between">
+      <section className="bg-[#f7faf5] px-5 py-20 dark:bg-[#0a2117] sm:px-8 sm:py-24">
+        <div className="mx-auto flex max-w-7xl flex-col gap-7 rounded-3xl bg-[#075031] px-7 py-12 text-white shadow-xl ring-1 ring-white/0 dark:ring-white/10 sm:px-12 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-black sm:text-4xl">
               Let&apos;s build the future—together.

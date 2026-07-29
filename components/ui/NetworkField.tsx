@@ -94,9 +94,14 @@ export default function NetworkField({
       mouse.y = -9999;
     }
 
+    function isDarkTheme() {
+      return document.documentElement.getAttribute("data-theme") === "dark";
+    }
+
     function draw(t: number) {
       const rect = canvas!.getBoundingClientRect();
       ctx!.clearRect(0, 0, rect.width, rect.height);
+      const dark = isDarkTheme();
 
       nodes.forEach((n) => {
         const driftX = n.baseX + Math.sin(t / 1800 + n.phase) * 8;
@@ -127,7 +132,9 @@ export default function NetworkField({
           ctx!.beginPath();
           ctx!.moveTo(nodes[i].x, nodes[i].y);
           ctx!.lineTo(nodes[j].x, nodes[j].y);
-          ctx!.strokeStyle = "rgba(23,101,54,0.055)";
+          ctx!.strokeStyle = dark
+            ? "rgba(180,220,195,0.09)"
+            : "rgba(23,101,54,0.055)";
           ctx!.lineWidth = 1;
           ctx!.stroke();
         }
@@ -181,12 +188,22 @@ export default function NetworkField({
       window.addEventListener("pointerleave", handlePointerLeave);
     }
 
+    let themeObserver: MutationObserver | undefined;
+    if (reduceMotion) {
+      themeObserver = new MutationObserver(() => draw(0));
+      themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["data-theme"],
+      });
+    }
+
     return () => {
       cancelAnimationFrame(rafId);
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("visibilitychange", handleVisibility);
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("pointerleave", handlePointerLeave);
+      themeObserver?.disconnect();
     };
   }, [colors]);
 

@@ -58,7 +58,19 @@ const leadershipPrinciples = [
   },
 ];
 
-const leadershipAreas = [
+type LeadershipArea = {
+  number: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  color: string;
+  photo?: string;
+  confirmedName?: string;
+  confirmedRole?: string;
+};
+
+const leadershipAreas: LeadershipArea[] = [
   {
     number: "01",
     title: "Technology Leadership",
@@ -76,6 +88,9 @@ const leadershipAreas = [
       "Leading artificial intelligence, automation, intelligent systems, data, and organizational transformation.",
     icon: "/images/icons/verticals/intelligence.png",
     color: "#087783",
+    photo: "/images/leadership/hamza.jpeg",
+    confirmedName: "Hamza Afzal",
+    confirmedRole: "Intelligence Lead",
   },
   {
     number: "03",
@@ -154,43 +169,47 @@ const teamMembers: TeamMember[] = [
     color: "#0b6740",
     photo: "/images/leadership/founder.png",
   },
-  ...leadershipAreas.map((area) => ({
-    role: area.title,
-    vertical: area.subtitle,
-    name: "Profile coming soon",
-    confirmed: false,
-    description: area.description,
-    color: area.color,
-    photo: "/images/leadership/placeholder-avatar.png",
-  })),
+  ...leadershipAreas.map((area) => {
+    const confirmed = Boolean(area.confirmedName);
+
+    return {
+      role: confirmed ? (area.confirmedRole ?? area.title) : area.title,
+      vertical: area.subtitle,
+      name: confirmed ? area.confirmedName! : "Profile coming soon",
+      confirmed,
+      description: area.description,
+      color: area.color,
+      photo: area.photo ?? "/images/leadership/placeholder-avatar.png",
+    };
+  }),
 ];
 
 export default function LeadershipPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#f8faf5] to-[#eaf3e7]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#f8faf5] to-[#eaf3e7] dark:from-[#071a12] dark:via-[#0a2117] dark:to-[#0d2a1c]">
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-25"
+          className="absolute inset-0 opacity-25 dark:opacity-[0.15]"
           style={{
             backgroundImage:
-              "radial-gradient(circle, rgba(23,101,54,0.22) 1px, transparent 1px)",
+              "radial-gradient(circle, var(--pagehero-dot) 1px, transparent 1px)",
             backgroundSize: "30px 30px",
           }}
         />
 
         <div
           aria-hidden="true"
-          className="absolute -right-32 top-0 h-[34rem] w-[34rem] rounded-full bg-green-200/35 blur-3xl"
+          className="absolute -right-32 top-0 h-[34rem] w-[34rem] rounded-full bg-green-200/35 blur-3xl dark:bg-emerald-500/10"
         />
 
         <NetworkField className="absolute inset-0 h-full w-full" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:min-h-[610px] lg:grid-cols-[0.9fr_1.1fr] lg:py-20">
           <div className="relative z-10">
-            <div className="flex items-center gap-2 text-sm font-medium text-[#176536]">
-              <Link href="/" className="transition hover:text-[#073b27]">
+            <div className="flex items-center gap-2 text-sm font-medium text-[#176536] dark:text-emerald-400/80">
+              <Link href="/" className="transition hover:text-[#073b27] dark:hover:text-emerald-300">
                 Home
               </Link>
 
@@ -198,17 +217,17 @@ export default function LeadershipPage() {
               <span>Leadership</span>
             </div>
 
-            <h1 className="mt-8 text-5xl font-black leading-[1.08] tracking-tight text-[#081c16] sm:text-6xl">
+            <h1 className="mt-8 text-5xl font-black leading-[1.08] tracking-tight text-[#081c16] dark:text-emerald-50 sm:text-6xl">
               Leadership
             </h1>
 
-            <p className="mt-5 text-xl font-bold leading-8 text-[#287641]">
+            <p className="mt-5 text-xl font-bold leading-8 text-[#287641] dark:text-emerald-400">
               Vision. Experience. Integrity.
             </p>
 
-            <div className="mt-5 h-1 w-12 rounded-full bg-[#287641]" />
+            <div className="mt-5 h-1 w-12 rounded-full bg-[#287641] dark:bg-emerald-400" />
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-slate-600">
+            <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 dark:text-emerald-100/60">
               LWAR Group is guided by purpose, specialist expertise, and a
               shared commitment to intelligent, responsible, and human-centred
               transformation.
@@ -217,7 +236,7 @@ export default function LeadershipPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#founder"
-                className="inline-flex items-center justify-center rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0e7d4f]"
+                className="inline-flex items-center justify-center rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0e7d4f] dark:bg-[#1a9b5c] dark:hover:bg-[#22b06a]"
               >
                 Meet Our Founder
                 <span className="ml-3">→</span>
@@ -225,7 +244,7 @@ export default function LeadershipPage() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-lg border border-[#176536]/30 bg-white px-7 py-4 text-sm font-bold text-[#075031] transition hover:bg-[#edf6e9]"
+                className="inline-flex items-center justify-center rounded-lg border border-[#176536]/30 bg-white px-7 py-4 text-sm font-bold text-[#075031] transition hover:bg-[#edf6e9] dark:border-emerald-400/35 dark:bg-white/5 dark:text-emerald-400 dark:hover:bg-white/10"
               >
                 Work With Us
               </Link>
@@ -235,7 +254,7 @@ export default function LeadershipPage() {
           <div className="relative mx-auto flex w-full max-w-2xl items-center justify-center">
             <div
               aria-hidden="true"
-              className="absolute h-[75%] w-[75%] rounded-full bg-green-200/25 blur-2xl"
+              className="absolute h-[75%] w-[75%] rounded-full bg-green-200/25 blur-2xl dark:bg-emerald-500/10"
             />
 
             <Image
@@ -244,7 +263,7 @@ export default function LeadershipPage() {
               width={1024}
               height={1536}
               priority
-              className="relative z-10 h-auto max-h-[520px] w-full object-contain mix-blend-multiply"
+              className="relative z-10 h-auto max-h-[520px] w-full object-contain mix-blend-multiply dark:mix-blend-normal"
             />
           </div>
         </div>
@@ -253,10 +272,10 @@ export default function LeadershipPage() {
       {/* Founder */}
 <section
   id="founder"
-  className="scroll-mt-28 bg-white py-14 sm:py-16 lg:py-24"
+  className="scroll-mt-28 bg-white py-14 dark:bg-[#071a12] sm:py-16 lg:py-24"
 >
   <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-[#043b27] via-[#075031] to-[#08713f] text-white shadow-xl">
+    <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-[#043b27] via-[#075031] to-[#08713f] text-white shadow-xl ring-1 ring-white/0 dark:ring-white/10">
       <div className="grid xl:grid-cols-[1fr_1.15fr]">
         {/* Founder profile */}
         <div className="border-b border-white/10 p-6 sm:p-8 lg:p-10 xl:border-b-0 xl:border-r">
@@ -354,18 +373,18 @@ export default function LeadershipPage() {
 </section>
 
       {/* Principles */}
-      <section className="bg-[#f7faf5] py-20 sm:py-24">
+      <section className="bg-[#f7faf5] py-20 dark:bg-[#0a2117] sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641]">
+            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641] dark:text-emerald-400">
               Leadership Principles
             </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] sm:text-5xl">
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] dark:text-emerald-50 sm:text-5xl">
               Driven by purpose. United by vision.
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-emerald-100/60">
               These principles define how LWAR Group leads teams, makes
               decisions, and creates trusted partnerships.
             </p>
@@ -375,21 +394,21 @@ export default function LeadershipPage() {
             {leadershipPrinciples.map((principle) => (
               <article
                 key={principle.number}
-                className="rounded-2xl border border-green-950/10 bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className="rounded-2xl border border-green-950/10 bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-[#0d2418]"
               >
-                <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-green-900/15 bg-[#edf6e9] text-2xl font-black text-[#075031]">
+                <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-green-900/15 bg-[#edf6e9] text-2xl font-black text-[#075031] dark:border-white/15 dark:bg-white/10 dark:text-emerald-400">
                   {principle.symbol}
                 </span>
 
-                <p className="mt-5 text-xs font-black text-[#287641]">
+                <p className="mt-5 text-xs font-black text-[#287641] dark:text-emerald-400">
                   {principle.number}
                 </p>
 
-                <h3 className="mt-2 text-lg font-black text-[#073b27]">
+                <h3 className="mt-2 text-lg font-black text-[#073b27] dark:text-emerald-50">
                   {principle.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-emerald-100/60">
                   {principle.description}
                 </p>
               </article>
@@ -399,18 +418,18 @@ export default function LeadershipPage() {
       </section>
 
       {/* Leadership areas */}
-      <section className="bg-white py-20 sm:py-24">
+      <section className="bg-white py-20 dark:bg-[#071a12] sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641]">
+            <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641] dark:text-emerald-400">
               Vertical Leadership
             </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] sm:text-5xl">
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] dark:text-emerald-50 sm:text-5xl">
               Specialist leadership across the ecosystem
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-emerald-100/60">
               Each LWAR vertical requires specialist direction while remaining
               aligned with the wider group strategy.
             </p>
@@ -420,7 +439,7 @@ export default function LeadershipPage() {
             {leadershipAreas.map((area) => (
               <article
                 key={area.number}
-                className="flex h-full flex-col rounded-2xl border border-green-950/10 bg-[#fbfcfa] p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className="flex h-full flex-col rounded-2xl border border-green-950/10 bg-[#fbfcfa] p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-[#0d2418]"
                 style={{
                   borderTopWidth: "4px",
                   borderTopColor: area.color,
@@ -444,24 +463,24 @@ export default function LeadershipPage() {
                 </div>
 
                 <p
-                  className="mt-6 text-center text-xs font-black"
-                  style={{ color: area.color }}
+                  className="accent-text mt-6 text-center text-xs font-black"
+                  style={{ "--accent-color": area.color } as React.CSSProperties}
                 >
                   {area.number}
                 </p>
 
-                <h3 className="mt-2 text-center text-xl font-black leading-7 text-[#073b27]">
+                <h3 className="mt-2 text-center text-xl font-black leading-7 text-[#073b27] dark:text-emerald-50">
                   {area.title}
                 </h3>
 
                 <p
-                  className="mt-2 text-center text-xs font-bold uppercase tracking-[0.12em]"
-                  style={{ color: area.color }}
+                  className="accent-text mt-2 text-center text-xs font-bold uppercase tracking-[0.12em]"
+                  style={{ "--accent-color": area.color } as React.CSSProperties}
                 >
                   {area.subtitle}
                 </p>
 
-                <p className="mt-5 text-center text-sm leading-6 text-slate-600">
+                <p className="mt-5 text-center text-sm leading-6 text-slate-600 dark:text-emerald-100/60">
                   {area.description}
                 </p>
 
@@ -478,8 +497,12 @@ export default function LeadershipPage() {
                       style={{ borderColor: `${area.color}70` }}
                     >
                       <Image
-                        src="/images/leadership/placeholder-avatar.png"
-                        alt={`${area.title} lead (profile to be confirmed)`}
+                        src={area.photo ?? "/images/leadership/placeholder-avatar.png"}
+                        alt={
+                          area.confirmedName
+                            ? `${area.confirmedName}, ${area.confirmedRole ?? area.title}`
+                            : `${area.title} lead (profile to be confirmed)`
+                        }
                         width={160}
                         height={160}
                         className="h-full w-full object-cover"
@@ -494,9 +517,9 @@ export default function LeadershipPage() {
       </section>
 
       {/* Leadership philosophy */}
-      <section className="bg-[#f7faf5] py-20 sm:py-24">
+      <section className="bg-[#f7faf5] py-20 dark:bg-[#0a2117] sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="rounded-3xl bg-[#075031] p-8 text-white shadow-lg sm:p-10">
+          <div className="rounded-3xl bg-[#075031] p-8 text-white shadow-lg ring-1 ring-white/0 dark:ring-white/10 sm:p-10">
             <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-green-300">
               Leadership Philosophy
             </p>
@@ -520,17 +543,17 @@ export default function LeadershipPage() {
             {leadershipResponsibilities.map((item) => (
               <article
                 key={item.number}
-                className="rounded-2xl border border-green-950/10 bg-white p-7 shadow-sm"
+                className="rounded-2xl border border-green-950/10 bg-white p-7 shadow-sm dark:border-white/10 dark:bg-[#0d2418]"
               >
-                <span className="grid h-12 w-12 place-items-center rounded-full bg-[#edf6e9] text-sm font-black text-[#075031]">
+                <span className="grid h-12 w-12 place-items-center rounded-full bg-[#edf6e9] text-sm font-black text-[#075031] dark:bg-white/10 dark:text-emerald-400">
                   {item.number}
                 </span>
 
-                <h3 className="mt-5 text-xl font-black text-[#073b27]">
+                <h3 className="mt-5 text-xl font-black text-[#073b27] dark:text-emerald-50">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-emerald-100/60">
                   {item.description}
                 </p>
               </article>
@@ -540,18 +563,18 @@ export default function LeadershipPage() {
       </section>
 
       {/* Important team-information notice */}
-      <section className="bg-white py-20 sm:py-24">
+      <section className="bg-white py-20 dark:bg-[#071a12] sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#287641]">
+            <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#287641] dark:text-emerald-400">
               Leadership Team
             </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] sm:text-5xl">
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] dark:text-emerald-50 sm:text-5xl">
               The people behind LWAR Group
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-emerald-100/60">
               Our founder and the specialists directing each vertical. Only
               verified names, roles, and photographs are published here.
             </p>
@@ -564,8 +587,8 @@ export default function LeadershipPage() {
       </section>
 
 {/* CTA */}
-<section className="bg-[#f7faf5] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
-  <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 rounded-3xl bg-gradient-to-r from-[#043b27] to-[#08623a] px-5 py-10 shadow-xl sm:px-8 sm:py-12 lg:flex-row lg:items-center lg:justify-between lg:px-12">
+<section className="bg-[#f7faf5] px-4 py-14 dark:bg-[#0a2117] sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+  <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 rounded-3xl bg-gradient-to-r from-[#043b27] to-[#08623a] px-5 py-10 shadow-xl ring-1 ring-white/0 dark:ring-white/10 sm:px-8 sm:py-12 lg:flex-row lg:items-center lg:justify-between lg:px-12">
     {/* CTA content */}
     <div className="max-w-3xl">
       <h2 className="text-3xl font-black text-white sm:text-4xl">

@@ -98,20 +98,20 @@ export default function ContactPage() {
       />
 
       <section className="relative z-10 -mt-10 px-5 sm:px-8">
-        <div className="mx-auto grid max-w-5xl overflow-hidden rounded-2xl border border-green-950/10 bg-white shadow-xl sm:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl overflow-hidden rounded-2xl border border-green-950/10 bg-white shadow-xl dark:border-white/10 dark:bg-[#0d2418] sm:grid-cols-3">
           {benefits.map((benefit) => (
             <article
               key={benefit.title}
-              className="flex items-center gap-4 border-b border-r border-green-950/10 p-6"
+              className="flex items-center gap-4 border-b border-r border-green-950/10 p-6 dark:border-white/10"
             >
               <IconCircle icon={benefit.icon} size="small" />
 
               <div>
-                <h2 className="font-black text-[#073b27]">
+                <h2 className="font-black text-[#073b27] dark:text-emerald-50">
                   {benefit.title}
                 </h2>
 
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="mt-1 text-sm text-slate-600 dark:text-emerald-100/60">
                   {benefit.description}
                 </p>
               </div>
@@ -120,18 +120,18 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-white pb-20 pt-28 sm:pb-24 sm:pt-32">
+      <section className="bg-white pb-20 pt-28 dark:bg-[#071a12] sm:pb-24 sm:pt-32">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr]">
-          <article className="rounded-3xl border border-green-950/10 bg-[#fbfcfa] p-7 shadow-sm sm:p-9">
+          <article className="rounded-3xl border border-green-950/10 bg-[#fbfcfa] p-7 shadow-sm dark:border-white/10 dark:bg-[#0d2418] sm:p-9">
             <div className="flex items-center gap-4">
               <IconCircle icon={MessageSquare} size="small" />
 
               <div>
-                <h2 className="text-2xl font-black text-[#073b27]">
+                <h2 className="text-2xl font-black text-[#073b27] dark:text-emerald-50">
                   Send Us a Message
                 </h2>
 
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="mt-1 text-sm text-slate-600 dark:text-emerald-100/60">
                   Complete the form and review the generated email before
                   sending it.
                 </p>
@@ -143,13 +143,13 @@ export default function ContactPage() {
             </div>
           </article>
 
-          <article className="relative overflow-hidden rounded-3xl border border-green-950/10 bg-white p-7 shadow-sm sm:p-9">
+          <article className="relative overflow-hidden rounded-3xl border border-green-950/10 bg-white p-7 shadow-sm dark:border-white/10 dark:bg-[#0d2418] sm:p-9">
             <div className="relative z-10">
-              <h2 className="text-2xl font-black text-[#073b27]">
+              <h2 className="text-2xl font-black text-[#073b27] dark:text-emerald-50">
                 Get in Touch
               </h2>
 
-              <p className="mt-3 max-w-sm leading-7 text-slate-600">
+              <p className="mt-3 max-w-sm leading-7 text-slate-600 dark:text-emerald-100/60">
                 We are here to support your journey toward transformation and
                 growth.
               </p>
@@ -159,11 +159,11 @@ export default function ContactPage() {
                   <IconCircle icon={MapPin} size="small" />
 
                   <div>
-                    <h3 className="font-black text-[#073b27]">
+                    <h3 className="font-black text-[#073b27] dark:text-emerald-50">
                       Head Office
                     </h3>
 
-                    <p className="mt-1 text-sm text-slate-600">
+                    <p className="mt-1 text-sm text-slate-600 dark:text-emerald-100/60">
                       Lahore, Punjab, Pakistan
                     </p>
                   </div>
@@ -173,11 +173,11 @@ export default function ContactPage() {
                   <IconCircle icon={Phone} size="small" />
 
                   <div>
-                    <h3 className="font-black text-[#073b27]">Phone</h3>
+                    <h3 className="font-black text-[#073b27] dark:text-emerald-50">Phone</h3>
 
                     <a
                       href="tel:+923144010027"
-                      className="mt-1 block text-sm text-slate-600 hover:text-[#075031]"
+                      className="mt-1 block text-sm text-slate-600 hover:text-[#075031] dark:text-emerald-100/60 dark:hover:text-emerald-400"
                     >
                       +92 314 4010027
                     </a>
@@ -188,11 +188,11 @@ export default function ContactPage() {
                   <IconCircle icon={Mail} size="small" />
 
                   <div>
-                    <h3 className="font-black text-[#073b27]">Email</h3>
+                    <h3 className="font-black text-[#073b27] dark:text-emerald-50">Email</h3>
 
                     <a
                       href="mailto:info@lwar.group"
-                      className="mt-1 block text-sm text-slate-600 hover:text-[#075031]"
+                      className="mt-1 block text-sm text-slate-600 hover:text-[#075031] dark:text-emerald-100/60 dark:hover:text-emerald-400"
                     >
                       info@lwar.group
                     </a>
@@ -203,11 +203,11 @@ export default function ContactPage() {
                   <IconCircle icon={Clock} size="small" />
 
                   <div>
-                    <h3 className="font-black text-[#073b27]">
+                    <h3 className="font-black text-[#073b27] dark:text-emerald-50">
                       Business Hours
                     </h3>
 
-                    <p className="mt-1 text-sm leading-6 text-slate-600">
+                    <p className="mt-1 text-sm leading-6 text-slate-600 dark:text-emerald-100/60">
                       Monday – Friday
                       <br />
                       9:00 AM – 6:00 PM (PKT)
@@ -223,13 +223,13 @@ export default function ContactPage() {
               width={800}
               height={500}
               aria-hidden="true"
-              className="pointer-events-none absolute bottom-0 right-0 w-[78%] opacity-20"
+              className="pointer-events-none absolute bottom-0 right-0 w-[78%] opacity-20 dark:opacity-[0.12] dark:invert"
             />
           </article>
         </div>
       </section>
 
-      <section className="bg-[#f7faf5] py-20 sm:py-24">
+      <section className="bg-[#f7faf5] py-20 dark:bg-[#0a2117] sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <SectionTitle
             eyebrow="How Can We Help?"
@@ -241,17 +241,17 @@ export default function ContactPage() {
             {inquiryTypes.map((item) => (
               <article
                 key={item.title}
-                className="rounded-2xl border border-green-950/10 bg-white p-6 text-center"
+                className="rounded-2xl border border-green-950/10 bg-white p-6 text-center dark:border-white/10 dark:bg-[#0d2418]"
               >
                 <div className="flex justify-center">
                   <IconCircle icon={item.icon} />
                 </div>
 
-                <h3 className="mt-5 text-lg font-black text-[#073b27]">
+                <h3 className="mt-5 text-lg font-black text-[#073b27] dark:text-emerald-50">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-emerald-100/60">
                   {item.description}
                 </p>
               </article>
@@ -260,8 +260,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-20 sm:px-8 sm:py-24">
-        <div className="mx-auto flex max-w-7xl flex-col gap-7 rounded-3xl bg-gradient-to-r from-[#043b27] to-[#08623a] px-7 py-12 text-white shadow-xl sm:px-12 lg:flex-row lg:items-center lg:justify-between">
+      <section className="bg-white px-5 py-20 dark:bg-[#071a12] sm:px-8 sm:py-24">
+        <div className="mx-auto flex max-w-7xl flex-col gap-7 rounded-3xl bg-gradient-to-r from-[#043b27] to-[#08623a] px-7 py-12 text-white shadow-xl ring-1 ring-white/0 dark:ring-white/10 sm:px-12 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <h2 className="text-3xl font-black sm:text-4xl">
               Let&apos;s build something extraordinary—together.

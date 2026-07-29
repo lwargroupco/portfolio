@@ -53,7 +53,7 @@ export default function ServiceList({ services, color }: ServiceListProps) {
       {services.map((service) => (
         <li
           key={service}
-          className="flex items-start gap-3 text-sm leading-6 text-slate-700"
+          className="flex items-start gap-3 text-sm leading-6 text-slate-700 dark:text-emerald-100/70"
         >
           <CheckIcon color={color} />
           <span>{service}</span>

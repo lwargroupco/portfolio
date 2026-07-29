@@ -22,7 +22,7 @@ export default function IconCircle({
       className={`grid ${containerSize} shrink-0 place-items-center rounded-full border shadow-sm ${
         dark
           ? "border-white/20 bg-white/10 text-white"
-          : "border-green-900/15 bg-[#edf6e9] text-[#075031]"
+          : "border-green-900/15 bg-[#edf6e9] text-[#075031] dark:border-white/15 dark:bg-white/10 dark:text-emerald-400"
       }`}
     >
       <Icon

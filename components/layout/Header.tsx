@@ -7,6 +7,7 @@ import { useState } from "react";
 
 import { mainNavigation } from "../../data/navigation";
 import MobileMenu from "./MobileMenu";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -33,7 +34,7 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-green-950/10 bg-white/95 shadow-sm backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-green-950/10 bg-white/95 shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-[#071a12]/95">
       <div className="mx-auto flex min-h-[76px] w-full max-w-[1440px] items-center justify-between gap-4 px-4 sm:min-h-20 sm:px-6 lg:px-8 xl:min-h-24">
         {/* Logo */}
         <Link
@@ -68,14 +69,14 @@ export default function Header() {
                 aria-current={active ? "page" : undefined}
                 className={`relative inline-flex items-center whitespace-nowrap py-3 text-sm font-semibold transition-colors ${
                   active
-                    ? "text-[#075031]"
-                    : "text-[#12291f] hover:text-[#075031]"
+                    ? "text-[#075031] dark:text-emerald-400"
+                    : "text-[#12291f] hover:text-[#075031] dark:text-emerald-50/85 dark:hover:text-emerald-400"
                 }`}
               >
                 {item.name}
 
                 {active ? (
-                  <span className="absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-[#19723f]" />
+                  <span className="absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-[#19723f] dark:bg-emerald-400" />
                 ) : null}
               </Link>
             );
@@ -83,28 +84,34 @@ export default function Header() {
         </nav>
 
         {/* Desktop actions */}
-        <div className="hidden shrink-0 xl:flex">
+        <div className="hidden shrink-0 items-center gap-3 xl:flex">
+          <ThemeToggle />
+
           <Link
             href="/contact"
-            className="inline-flex min-w-36 items-center justify-center rounded-lg bg-[#0b6740] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#0e7d4f]"
+            className="inline-flex min-w-36 items-center justify-center rounded-lg bg-[#0b6740] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#0e7d4f] dark:bg-[#1a9b5c] dark:hover:bg-[#22b06a]"
           >
             Contact Us
           </Link>
         </div>
 
-        {/* Mobile menu toggle */}
-        <button
-          type="button"
-          aria-label={
-            menuOpen
-              ? "Close navigation menu"
-              : "Open navigation menu"
-          }
-          aria-expanded={menuOpen}
-          aria-controls="mobile-navigation"
-          onClick={toggleMenu}
-          className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-green-950/15 bg-white text-[#075031] transition hover:bg-[#f1f7ee] xl:hidden"
-        >
+        {/* Mobile actions */}
+        <div className="flex shrink-0 items-center gap-2 xl:hidden">
+          <ThemeToggle />
+
+          {/* Mobile menu toggle */}
+          <button
+            type="button"
+            aria-label={
+              menuOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+            }
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            onClick={toggleMenu}
+            className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-green-950/15 bg-white text-[#075031] transition hover:bg-[#f1f7ee] dark:border-white/15 dark:bg-white/5 dark:text-emerald-50 dark:hover:bg-white/10"
+          >
           {menuOpen ? (
             <svg
               viewBox="0 0 24 24"
@@ -131,7 +138,8 @@ export default function Header() {
               <path d="M4 17h16" />
             </svg>
           )}
-        </button>
+          </button>
+        </div>
       </div>
 
       <MobileMenu

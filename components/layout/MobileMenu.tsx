@@ -35,7 +35,7 @@ export default function MobileMenu({
   return (
     <div
       id="mobile-navigation"
-      className="max-h-[calc(100vh-76px)] overflow-y-auto border-t border-green-950/10 bg-white shadow-lg xl:hidden"
+      className="max-h-[calc(100vh-76px)] overflow-y-auto border-t border-green-950/10 bg-white shadow-lg dark:border-white/10 dark:bg-[#071a12] xl:hidden"
     >
       <nav
         aria-label="Mobile navigation"
@@ -52,8 +52,8 @@ export default function MobileMenu({
               onClick={onClose}
               className={`flex items-center justify-between rounded-xl px-4 py-3.5 text-sm font-semibold transition ${
                 active
-                  ? "bg-[#e8f3e5] text-[#075031]"
-                  : "text-slate-700 hover:bg-slate-50 hover:text-[#075031]"
+                  ? "bg-[#e8f3e5] text-[#075031] dark:bg-white/10 dark:text-emerald-400"
+                  : "text-slate-700 hover:bg-slate-50 hover:text-[#075031] dark:text-emerald-50/85 dark:hover:bg-white/5 dark:hover:text-emerald-400"
               }`}
             >
               <span>{item.name}</span>
@@ -77,7 +77,7 @@ export default function MobileMenu({
           <Link
             href="/contact"
             onClick={onClose}
-            className="inline-flex w-full items-center justify-center rounded-xl bg-[#0b6740] px-6 py-4 text-sm font-bold text-white transition hover:bg-[#0e7d4f]"
+            className="inline-flex w-full items-center justify-center rounded-xl bg-[#0b6740] px-6 py-4 text-sm font-bold text-white transition hover:bg-[#0e7d4f] dark:bg-[#1a9b5c] dark:hover:bg-[#22b06a]"
           >
             Contact Us
           </Link>

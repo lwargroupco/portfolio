@@ -53,16 +53,16 @@ export default function ProcessTimeline({ steps }: ProcessTimelineProps) {
         >
           <span
             aria-hidden="true"
-            className="process-dot relative mx-auto grid h-16 w-16 place-items-center rounded-full bg-[#0b6740] text-sm font-black text-white shadow-md"
+            className="process-dot relative mx-auto grid h-16 w-16 place-items-center rounded-full bg-[#0b6740] text-sm font-black text-white shadow-md dark:bg-[#1a9b5c]"
           >
             {step.number}
           </span>
 
-          <h3 className="mt-5 text-center text-xl font-black text-[#073b27]">
+          <h3 className="mt-5 text-center text-xl font-black text-[#073b27] dark:text-emerald-50">
             {step.title}
           </h3>
 
-          <p className="mt-3 text-center text-sm leading-6 text-slate-600">
+          <p className="mt-3 text-center text-sm leading-6 text-slate-600 dark:text-emerald-100/60">
             {step.description}
           </p>
         </div>

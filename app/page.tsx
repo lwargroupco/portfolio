@@ -217,16 +217,16 @@ function SectionHeading({
 }) {
   return (
     <div className="mx-auto max-w-3xl text-center">
-      <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641]">
+      <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641] dark:text-emerald-400">
         {eyebrow}
       </p>
 
-      <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight text-[#073b27] sm:text-4xl lg:text-5xl">
+      <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight text-[#073b27] dark:text-emerald-50 sm:text-4xl lg:text-5xl">
         {title}
       </h2>
 
       {description ? (
-        <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg">
+        <p className="mt-5 text-base leading-7 text-slate-600 dark:text-emerald-100/60 sm:text-lg">
           {description}
         </p>
       ) : null}
@@ -255,7 +255,7 @@ function IconImage({
 
   return (
     <span
-      className={`grid ${containerClasses} shrink-0 place-items-center overflow-hidden rounded-full border border-green-900/15 bg-white shadow-md`}
+      className={`grid ${containerClasses} shrink-0 place-items-center overflow-hidden rounded-full border border-green-900/15 bg-white shadow-md dark:border-white/15 dark:bg-white/90`}
     >
       <Image
         src={src}
@@ -272,43 +272,43 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#f8faf5] to-[#e8f2e4]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#f8faf5] to-[#e8f2e4] dark:from-[#071a12] dark:via-[#0a2117] dark:to-[#0d2a1c]">
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-25"
+          className="absolute inset-0 opacity-25 dark:opacity-[0.15]"
           style={{
             backgroundImage:
-              "radial-gradient(circle, rgba(23,101,54,0.22) 1px, transparent 1px)",
+              "radial-gradient(circle, var(--pagehero-dot) 1px, transparent 1px)",
             backgroundSize: "30px 30px",
           }}
         />
 
         <div
           aria-hidden="true"
-          className="absolute -left-32 top-40 h-80 w-80 rounded-full bg-green-200/30 blur-3xl"
+          className="absolute -left-32 top-40 h-80 w-80 rounded-full bg-green-200/30 blur-3xl dark:bg-emerald-500/10"
         />
 
         <div
           aria-hidden="true"
-          className="absolute -right-32 top-0 h-[36rem] w-[36rem] rounded-full bg-green-200/40 blur-3xl"
+          className="absolute -right-32 top-0 h-[36rem] w-[36rem] rounded-full bg-green-200/40 blur-3xl dark:bg-emerald-500/10"
         />
 
         <NetworkField className="absolute inset-0 h-full w-full" />
 
         <div className="relative mx-auto grid min-h-[680px] max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:py-20">
           <div className="relative z-10">
-            <p className="inline-flex rounded-full border border-green-900/15 bg-white/90 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-[#176536] shadow-sm">
+            <p className="inline-flex rounded-full border border-green-900/15 bg-white/90 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-[#176536] shadow-sm dark:border-white/15 dark:bg-white/5 dark:text-emerald-400">
               Technology · Intelligence · Education · Research
             </p>
 
-            <h1 className="mt-7 text-4xl font-black leading-[1.08] tracking-tight text-[#063c28] sm:text-5xl lg:text-6xl">
+            <h1 className="mt-7 text-4xl font-black leading-[1.08] tracking-tight text-[#063c28] dark:text-emerald-50 sm:text-5xl lg:text-6xl">
               Engineering Intelligence.
-              <span className="mt-2 block text-[#36873e]">
+              <span className="mt-2 block text-[#36873e] dark:text-emerald-400">
                 Enabling Transformation.
               </span>
             </h1>
 
-            <p className="mt-7 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+            <p className="mt-7 max-w-xl text-base leading-8 text-slate-600 dark:text-emerald-100/60 sm:text-lg">
               LWAR Group connects technology, artificial intelligence, digital
               growth, education, and research to build intelligent systems,
               empower people, and create meaningful progress.
@@ -317,7 +317,7 @@ export default function HomePage() {
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/verticals"
-                className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0e7d4f]"
+                className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0e7d4f] dark:bg-[#1a9b5c] dark:hover:bg-[#22b06a]"
               >
                 Explore Our Ecosystem
                 <ArrowIcon />
@@ -325,7 +325,7 @@ export default function HomePage() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-3 rounded-lg border border-[#176536]/35 bg-white px-7 py-4 text-sm font-bold text-[#075031] transition hover:border-[#075031] hover:bg-[#edf6e9]"
+                className="inline-flex items-center justify-center gap-3 rounded-lg border border-[#176536]/35 bg-white px-7 py-4 text-sm font-bold text-[#075031] transition hover:border-[#075031] hover:bg-[#edf6e9] dark:border-emerald-400/35 dark:bg-white/5 dark:text-emerald-400 dark:hover:border-emerald-400 dark:hover:bg-white/10"
               >
                 Partner With LWAR
                 <ArrowIcon />
@@ -334,7 +334,7 @@ export default function HomePage() {
 
             <a
               href="#about-preview"
-              className="mt-9 inline-flex items-center gap-2 text-xs font-bold text-[#176536]"
+              className="mt-9 inline-flex items-center gap-2 text-xs font-bold text-[#176536] dark:text-emerald-400"
             >
               <span>↓</span>
               Scroll Down
@@ -344,7 +344,7 @@ export default function HomePage() {
           <div className="relative mx-auto flex w-full max-w-2xl items-center justify-center">
             <div
               aria-hidden="true"
-              className="absolute h-[78%] w-[78%] rounded-full border border-green-900/10 bg-green-100/25"
+              className="absolute h-[78%] w-[78%] rounded-full border border-green-900/10 bg-green-100/25 dark:border-white/10 dark:bg-emerald-500/10"
             />
 
             <Image
@@ -353,7 +353,7 @@ export default function HomePage() {
               width={1000}
               height={800}
               priority
-              className="relative z-10 h-auto max-h-[560px] w-full object-contain mix-blend-multiply"
+              className="relative z-10 h-auto max-h-[560px] w-full object-contain mix-blend-multiply dark:mix-blend-normal"
             />
           </div>
         </div>
@@ -362,15 +362,15 @@ export default function HomePage() {
       {/* About preview */}
       <section
         id="about-preview"
-        className="scroll-mt-28 bg-white py-20 sm:py-24"
+        className="scroll-mt-28 bg-white py-20 dark:bg-[#071a12] sm:py-24"
       >
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#287641]">
+            <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#287641] dark:text-emerald-400">
               About LWAR Group
             </p>
 
-            <h2 className="mt-5 text-3xl font-black leading-tight tracking-tight text-[#073b27] sm:text-4xl lg:text-5xl">
+            <h2 className="mt-5 text-3xl font-black leading-tight tracking-tight text-[#073b27] dark:text-emerald-50 sm:text-4xl lg:text-5xl">
               Building Intelligent Systems.
               <br />
               Empowering People.
@@ -380,20 +380,20 @@ export default function HomePage() {
           </div>
 
           <div>
-            <p className="text-base leading-8 text-slate-600">
+            <p className="text-base leading-8 text-slate-600 dark:text-emerald-100/60">
               Modern organizations need more than individual services. They
               need connected systems, intelligent strategies, future-ready
               talent, and research-backed decisions.
             </p>
 
-            <p className="mt-5 text-base leading-8 text-slate-600">
+            <p className="mt-5 text-base leading-8 text-slate-600 dark:text-emerald-100/60">
               LWAR Group brings these capabilities together within one
               integrated, collaborative, and human-centred ecosystem.
             </p>
 
             <Link
               href="/about"
-              className="mt-8 inline-flex items-center gap-3 rounded-lg bg-[#0b6740] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#0e7d4f]"
+              className="mt-8 inline-flex items-center gap-3 rounded-lg bg-[#0b6740] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#0e7d4f] dark:bg-[#1a9b5c] dark:hover:bg-[#22b06a]"
             >
               Learn More About Us
               <ArrowIcon />
@@ -403,7 +403,7 @@ export default function HomePage() {
       </section>
 
       {/* Five verticals */}
-      <section className="bg-[#f7faf5] py-20 sm:py-24">
+      <section className="bg-[#f7faf5] py-20 dark:bg-[#0a2117] sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <SectionHeading
             eyebrow="Our Five Strategic Verticals"
@@ -415,11 +415,12 @@ export default function HomePage() {
             {verticals.map((vertical, index) => (
               <article
                 key={vertical.title}
-                className="group flex min-h-[430px] flex-col rounded-2xl border border-green-950/10 bg-white px-6 pb-7 pt-8 text-center shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+                className="group flex min-h-[430px] flex-col rounded-2xl border border-green-950/10 bg-white px-6 pb-7 pt-8 text-center shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-white/10 dark:bg-[#0d2418]"
                 style={{
                   borderTopWidth: "4px",
                   borderTopColor: vertical.color,
-                }}
+                  "--accent-color": vertical.color,
+                } as React.CSSProperties}
               >
                 <div className="flex justify-center">
                   <IconImage
@@ -428,35 +429,25 @@ export default function HomePage() {
                   />
                 </div>
 
-                <p
-                  className="mt-5 text-xs font-black"
-                  style={{ color: vertical.color }}
-                >
+                <p className="accent-text mt-5 text-xs font-black">
                   0{index + 1}
                 </p>
 
-                <h3
-                  className="mt-3 text-xl font-black leading-tight"
-                  style={{ color: vertical.color }}
-                >
+                <h3 className="accent-text mt-3 text-xl font-black leading-tight">
                   {vertical.title}
                 </h3>
 
-                <p
-                  className="mt-2 text-xs font-bold uppercase tracking-[0.13em]"
-                  style={{ color: vertical.color }}
-                >
+                <p className="accent-text mt-2 text-xs font-bold uppercase tracking-[0.13em]">
                   {vertical.tagline}
                 </p>
 
-                <p className="mt-6 flex-1 text-sm leading-6 text-slate-600">
+                <p className="mt-6 flex-1 text-sm leading-6 text-slate-600 dark:text-emerald-100/60">
                   {vertical.description}
                 </p>
 
                 <Link
                   href={vertical.href ?? "/verticals"}
-                  className="mt-7 inline-flex items-center justify-center gap-3 text-sm font-bold"
-                  style={{ color: vertical.color }}
+                  className="accent-text mt-7 inline-flex items-center justify-center gap-3 text-sm font-bold"
                 >
                   Explore Vertical
                   <ArrowIcon />
@@ -468,7 +459,7 @@ export default function HomePage() {
           <div className="mt-12 text-center">
             <Link
               href="/verticals"
-              className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#0e7d4f]"
+              className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#0e7d4f] dark:bg-[#1a9b5c] dark:hover:bg-[#22b06a]"
             >
               View All Verticals
               <ArrowIcon />
@@ -478,7 +469,7 @@ export default function HomePage() {
       </section>
 
       {/* Services */}
-      <section className="bg-[#f7faf5] py-20 sm:py-24">
+      <section className="bg-[#f7faf5] py-20 dark:bg-[#0a2117] sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <SectionHeading
             eyebrow="Our Services"
@@ -490,7 +481,7 @@ export default function HomePage() {
             {services.map((service) => (
               <article
                 key={service.title}
-                className="group rounded-2xl border border-green-950/10 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className="group rounded-2xl border border-green-950/10 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-[#0d2418]"
               >
                 <IconImage
                   src={service.icon}
@@ -498,17 +489,17 @@ export default function HomePage() {
                   size="small"
                 />
 
-                <h3 className="mt-6 text-xl font-black text-[#073b27]">
+                <h3 className="mt-6 text-xl font-black text-[#073b27] dark:text-emerald-50">
                   {service.title}
                 </h3>
 
-                <p className="mt-4 text-sm leading-6 text-slate-600">
+                <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-emerald-100/60">
                   {service.description}
                 </p>
 
                 <Link
                   href={service.href ?? "/services"}
-                  className="mt-6 inline-flex items-center gap-3 text-sm font-bold text-[#075031]"
+                  className="mt-6 inline-flex items-center gap-3 text-sm font-bold text-[#075031] dark:text-emerald-400"
                 >
                   Explore Service
                   <ArrowIcon />
@@ -520,7 +511,7 @@ export default function HomePage() {
           <div className="mt-10 text-center">
             <Link
               href="/services"
-              className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#0e7d4f]"
+              className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white transition hover:bg-[#0e7d4f] dark:bg-[#1a9b5c] dark:hover:bg-[#22b06a]"
             >
               View All Services
               <ArrowIcon />
@@ -530,7 +521,7 @@ export default function HomePage() {
       </section>
 
       {/* Why choose LWAR */}
-      <section className="bg-white py-20 sm:py-24">
+      <section className="bg-white py-20 dark:bg-[#071a12] sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <SectionHeading
             eyebrow="Why Choose LWAR"
@@ -542,7 +533,7 @@ export default function HomePage() {
             {advantages.map((advantage) => (
               <article
                 key={advantage.title}
-                className="rounded-2xl border border-green-950/10 bg-[#fbfcfa] p-6 text-center"
+                className="rounded-2xl border border-green-950/10 bg-[#fbfcfa] p-6 text-center dark:border-white/10 dark:bg-[#0d2418]"
               >
                 <div className="flex justify-center">
                   <IconImage
@@ -552,11 +543,11 @@ export default function HomePage() {
                   />
                 </div>
 
-                <h3 className="mt-5 text-lg font-black text-[#073b27]">
+                <h3 className="mt-5 text-lg font-black text-[#073b27] dark:text-emerald-50">
                   {advantage.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-emerald-100/60">
                   {advantage.description}
                 </p>
               </article>
@@ -566,8 +557,8 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-white px-5 py-20 sm:px-8 sm:py-24">
-        <div className="relative mx-auto flex max-w-7xl flex-col gap-8 overflow-hidden rounded-3xl bg-gradient-to-r from-[#043b27] to-[#08623a] px-7 py-12 text-white shadow-xl sm:px-12 lg:flex-row lg:items-center lg:justify-between">
+      <section className="bg-white px-5 py-20 dark:bg-[#071a12] sm:px-8 sm:py-24">
+        <div className="relative mx-auto flex max-w-7xl flex-col gap-8 overflow-hidden rounded-3xl bg-gradient-to-r from-[#043b27] to-[#08623a] px-7 py-12 text-white shadow-xl ring-1 ring-white/0 dark:ring-white/10 sm:px-12 lg:flex-row lg:items-center lg:justify-between">
           <div
             aria-hidden="true"
             className="absolute -right-24 -top-24 h-72 w-72 rounded-full border-[45px] border-white/5"

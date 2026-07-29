@@ -13,16 +13,16 @@ export default function SectionTitle({
 }: SectionTitleProps) {
   return (
     <div className={centered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
-      <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641]">
+      <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#287641] dark:text-emerald-400">
         {eyebrow}
       </p>
 
-      <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight text-[#073b27] sm:text-4xl lg:text-5xl">
+      <h2 className="mt-4 text-3xl font-black leading-tight tracking-tight text-[#073b27] dark:text-emerald-50 sm:text-4xl lg:text-5xl">
         {title}
       </h2>
 
       {description ? (
-        <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg">
+        <p className="mt-5 text-base leading-7 text-slate-600 dark:text-emerald-100/60 sm:text-lg">
           {description}
         </p>
       ) : null}

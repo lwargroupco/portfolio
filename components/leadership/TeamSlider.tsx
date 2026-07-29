@@ -87,7 +87,7 @@ export default function TeamSlider({ members }: { members: TeamMember[] }) {
       onBlur={() => setPaused(false)}
     >
       <div
-        className="overflow-hidden rounded-3xl border border-green-950/10 bg-white shadow-sm"
+        className="overflow-hidden rounded-3xl border border-green-950/10 bg-white shadow-sm dark:border-white/10 dark:bg-[#0d2418]"
         style={{ borderTopWidth: "4px", borderTopColor: member.color }}
       >
         <div className="grid sm:grid-cols-[0.42fr_1fr]">
@@ -108,17 +108,23 @@ export default function TeamSlider({ members }: { members: TeamMember[] }) {
 
           <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-12">
             <p
-              className="text-xs font-extrabold uppercase tracking-[0.14em]"
-              style={{ color: member.color }}
+              className="accent-text text-xs font-extrabold uppercase tracking-[0.14em]"
+              style={{ "--accent-color": member.color } as React.CSSProperties}
             >
               {member.vertical}
             </p>
 
-            <h3 className="mt-2 text-3xl font-black text-[#073b27] sm:text-4xl">
+            <h3 className="mt-2 text-3xl font-black text-[#073b27] dark:text-emerald-50 sm:text-4xl">
               {member.confirmed ? member.name : member.role}
             </h3>
 
-            <p className="mt-4 max-w-[48ch] text-sm leading-7 text-slate-600">
+            {member.confirmed && member.role ? (
+              <p className="mt-1 text-sm font-bold text-slate-500 dark:text-emerald-100/50">
+                {member.role}
+              </p>
+            ) : null}
+
+            <p className="mt-4 max-w-[48ch] text-sm leading-7 text-slate-600 dark:text-emerald-100/60">
               {member.description}
             </p>
 
@@ -127,11 +133,11 @@ export default function TeamSlider({ members }: { members: TeamMember[] }) {
                 {member.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-lg px-3 py-1.5 text-xs font-bold"
+                    className="accent-text rounded-lg px-3 py-1.5 text-xs font-bold"
                     style={{
-                      color: member.color,
+                      "--accent-color": member.color,
                       backgroundColor: `${member.color}12`,
-                    }}
+                    } as React.CSSProperties}
                   >
                     {tag}
                   </span>
@@ -140,7 +146,7 @@ export default function TeamSlider({ members }: { members: TeamMember[] }) {
             ) : null}
 
             {!member.confirmed ? (
-              <p className="mt-6 inline-flex items-center gap-2 text-xs italic text-slate-400">
+              <p className="mt-6 inline-flex items-center gap-2 text-xs italic text-slate-400 dark:text-emerald-100/40">
                 <CheckIcon />
                 Role confirmed &middot; profile pending
               </p>
@@ -154,7 +160,7 @@ export default function TeamSlider({ members }: { members: TeamMember[] }) {
           type="button"
           onClick={() => goTo(current - 1)}
           aria-label="Previous team member"
-          className="grid h-10 w-10 place-items-center rounded-full border border-green-950/15 bg-white text-[#073b27] transition hover:-translate-y-0.5 hover:border-[#0b6740] hover:text-[#0b6740]"
+          className="grid h-10 w-10 place-items-center rounded-full border border-green-950/15 bg-white text-[#073b27] transition hover:-translate-y-0.5 hover:border-[#0b6740] hover:text-[#0b6740] dark:border-white/15 dark:bg-white/5 dark:text-emerald-50 dark:hover:border-[#22b06a] dark:hover:text-[#22b06a]"
         >
           <ChevronIcon direction="left" />
         </button>
@@ -167,11 +173,12 @@ export default function TeamSlider({ members }: { members: TeamMember[] }) {
               onClick={() => goTo(index)}
               aria-label={`Go to ${m.confirmed ? m.name : m.role}`}
               aria-current={index === current}
-              className="h-2 rounded-full transition-all duration-300"
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === current ? "" : "bg-[rgba(8,28,22,0.14)] dark:bg-white/15"
+              }`}
               style={{
                 width: index === current ? "22px" : "8px",
-                backgroundColor:
-                  index === current ? m.color : "rgba(8,28,22,0.14)",
+                backgroundColor: index === current ? m.color : undefined,
               }}
             />
           ))}
@@ -181,7 +188,7 @@ export default function TeamSlider({ members }: { members: TeamMember[] }) {
           type="button"
           onClick={() => goTo(current + 1)}
           aria-label="Next team member"
-          className="grid h-10 w-10 place-items-center rounded-full border border-green-950/15 bg-white text-[#073b27] transition hover:-translate-y-0.5 hover:border-[#0b6740] hover:text-[#0b6740]"
+          className="grid h-10 w-10 place-items-center rounded-full border border-green-950/15 bg-white text-[#073b27] transition hover:-translate-y-0.5 hover:border-[#0b6740] hover:text-[#0b6740] dark:border-white/15 dark:bg-white/5 dark:text-emerald-50 dark:hover:border-[#22b06a] dark:hover:text-[#22b06a]"
         >
           <ChevronIcon direction="right" />
         </button>

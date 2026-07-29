@@ -9,7 +9,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="w-full overflow-hidden bg-gradient-to-br from-[#032f20] via-[#043f28] to-[#005033] text-white">
+    <footer className="w-full overflow-hidden border-t border-white/0 bg-gradient-to-br from-[#032f20] via-[#043f28] to-[#005033] text-white dark:border-white/10">
       <div className="mx-auto grid w-full max-w-[1440px] gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 sm:py-14 lg:grid-cols-3 lg:px-8 xl:grid-cols-[1.25fr_0.8fr_1fr_1fr_1fr]">
         {/* Brand */}
         <div className="sm:col-span-2 lg:col-span-1">
