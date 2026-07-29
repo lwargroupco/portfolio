@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import NetworkField from "../../components/ui/NetworkField";
+import TeamSlider, {
+  type TeamMember,
+} from "../../components/leadership/TeamSlider";
 
 export const metadata: Metadata = {
   title: "Leadership",
@@ -139,6 +142,29 @@ const founderCapabilities = [
   "Ecosystem Builder",
 ];
 
+const teamMembers: TeamMember[] = [
+  {
+    role: "Founder & Group Director",
+    vertical: "LWAR Group",
+    name: "Abdur Rehman",
+    confirmed: true,
+    description:
+      "Leading LWAR Group with a focus on technology, intelligence, education, research, and responsible transformation.",
+    tags: founderCapabilities,
+    color: "#0b6740",
+    photo: "/images/leadership/founder.png",
+  },
+  ...leadershipAreas.map((area) => ({
+    role: area.title,
+    vertical: area.subtitle,
+    name: "Profile coming soon",
+    confirmed: false,
+    description: area.description,
+    color: area.color,
+    photo: "/images/leadership/placeholder-avatar.png",
+  })),
+];
+
 export default function LeadershipPage() {
   return (
     <>
@@ -213,10 +239,10 @@ export default function LeadershipPage() {
             />
 
             <Image
-              src="/images/services/services-panda.png"
+              src="/images/leadership/leadership.png"
               alt="LWAR Group panda representing purposeful and collaborative leadership"
-              width={1000}
-              height={800}
+              width={1024}
+              height={1536}
               priority
               className="relative z-10 h-auto max-h-[520px] w-full object-contain mix-blend-multiply"
             />
@@ -265,18 +291,18 @@ export default function LeadershipPage() {
                 Leading LWAR Group with a focus on technology, intelligence,
                 education, research, and responsible transformation.
               </p>
-
-              <div className="mt-7 flex flex-wrap gap-3">
-                {founderCapabilities.map((capability) => (
-                  <span
-                    key={capability}
-                    className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold text-emerald-50"
-                  >
-                    {capability}
-                  </span>
-                ))}
-              </div>
             </div>
+          </div>
+
+          <div className="mt-7 flex flex-wrap gap-3">
+            {founderCapabilities.map((capability) => (
+              <span
+                key={capability}
+                className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold text-emerald-50"
+              >
+                {capability}
+              </span>
+            ))}
           </div>
         </div>
 
@@ -394,7 +420,7 @@ export default function LeadershipPage() {
             {leadershipAreas.map((area) => (
               <article
                 key={area.number}
-                className="rounded-2xl border border-green-950/10 bg-[#fbfcfa] p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className="flex h-full flex-col rounded-2xl border border-green-950/10 bg-[#fbfcfa] p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                 style={{
                   borderTopWidth: "4px",
                   borderTopColor: area.color,
@@ -439,9 +465,28 @@ export default function LeadershipPage() {
                   {area.description}
                 </p>
 
-                <p className="mt-6 rounded-lg bg-white px-4 py-3 text-center text-xs font-bold text-slate-500">
-                  Confirmed leadership profile will be added
-                </p>
+                <div className="mt-auto flex justify-center pt-6">
+                  <div className="group relative grid h-20 w-20 place-items-center">
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 animate-avatar-pulse rounded-full motion-reduce:animate-none"
+                      style={{ backgroundColor: area.color }}
+                    />
+
+                    <div
+                      className="relative h-20 w-20 overflow-hidden rounded-full border-2 bg-white shadow-sm transition-transform duration-300 ease-out group-hover:scale-110"
+                      style={{ borderColor: `${area.color}70` }}
+                    >
+                      <Image
+                        src="/images/leadership/placeholder-avatar.png"
+                        alt={`${area.title} lead (profile to be confirmed)`}
+                        width={160}
+                        height={160}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
               </article>
             ))}
           </div>
@@ -496,21 +541,24 @@ export default function LeadershipPage() {
 
       {/* Important team-information notice */}
       <section className="bg-white py-20 sm:py-24">
-        <div className="mx-auto max-w-5xl px-5 sm:px-8">
-          <div className="rounded-3xl border border-green-950/10 bg-[#fbfcfa] p-8 text-center shadow-sm sm:p-12">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#287641]">
               Leadership Team
             </p>
 
-            <h2 className="mt-4 text-3xl font-black text-[#073b27] sm:text-4xl">
-              Full team profiles will be added after confirmation.
+            <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] sm:text-5xl">
+              The people behind LWAR Group
             </h2>
 
-            <p className="mx-auto mt-5 max-w-3xl leading-8 text-slate-600">
-              Only verified names, roles, biographies, and photographs should
-              be published. This protects the credibility of LWAR Group and
-              prevents placeholder information from appearing as factual.
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Our founder and the specialists directing each vertical. Only
+              verified names, roles, and photographs are published here.
             </p>
+          </div>
+
+          <div className="mt-14">
+            <TeamSlider members={teamMembers} />
           </div>
         </div>
       </section>
