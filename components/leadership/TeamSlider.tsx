@@ -14,7 +14,7 @@ export type TeamMember = {
   photo: string;
 };
 
-const AUTOPLAY_MS = 5500;
+const AUTOPLAY_MS = 3000;
 
 function ChevronIcon({ direction }: { direction: "left" | "right" }) {
   return (
@@ -90,7 +90,7 @@ export default function TeamSlider({ members }: { members: TeamMember[] }) {
         className="overflow-hidden rounded-3xl border border-green-950/10 bg-white shadow-sm"
         style={{ borderTopWidth: "4px", borderTopColor: member.color }}
       >
-        <div className="grid sm:grid-cols-[0.85fr_1fr]">
+        <div className="grid sm:grid-cols-[0.42fr_1fr]">
           <div className="relative aspect-square w-full sm:aspect-auto sm:min-h-[420px]">
             <Image
               src={member.photo}
@@ -100,13 +100,13 @@ export default function TeamSlider({ members }: { members: TeamMember[] }) {
                   : `Placeholder avatar for the ${member.role} role`
               }
               fill
-              sizes="(max-width: 640px) 100vw, 480px"
-              className="object-cover"
+              sizes="(max-width: 640px) 100vw, 360px"
+              className={member.confirmed ? "object-cover" : "object-contain"}
               style={{ backgroundColor: `${member.color}0f` }}
             />
           </div>
 
-          <div className="p-6 sm:p-8 lg:p-12">
+          <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-12">
             <p
               className="text-xs font-extrabold uppercase tracking-[0.14em]"
               style={{ color: member.color }}
