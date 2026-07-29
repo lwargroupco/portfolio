@@ -288,7 +288,7 @@ export default function ServicesPage() {
             <div className="absolute h-[75%] w-[75%] rounded-full bg-green-200/25 blur-2xl" />
 
             <Image
-              src="/images/services/services_panda.png"
+              src="/images/services/services-panda.png"
               alt="LWAR Group panda presenting intelligent services and solutions"
               width={1000}
               height={800}
