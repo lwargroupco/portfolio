@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
@@ -106,6 +107,8 @@ export default function RootLayout({
         <Footer />
 
         <WhatsAppButton />
+
+        <Analytics />
       </body>
     </html>
   );
