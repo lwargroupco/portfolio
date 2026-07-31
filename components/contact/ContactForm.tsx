@@ -153,7 +153,7 @@ export default function ContactForm() {
         />
 
         <span>
-          I agree that LWAR Group may use these details to respond to my
+          I agree that LWAR Companies may use these details to respond to my
           inquiry.
         </span>
       </label>

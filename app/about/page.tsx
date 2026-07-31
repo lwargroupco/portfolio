@@ -7,7 +7,7 @@ import NetworkField from "../../components/ui/NetworkField";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about LWAR Group, our purpose, vision, mission, values, strategic verticals, leadership, and future direction.",
+    "Learn about LWAR Companies, our purpose, vision, mission, values, strategic verticals, leadership, and future direction.",
 };
 
 const statistics = [
@@ -373,13 +373,13 @@ export default function AboutPage() {
               </Link>
 
               <span>›</span>
-              <span>About LWAR Group</span>
+              <span>About LWAR Companies</span>
             </div>
 
             <h1 className="mt-8 text-5xl font-black leading-[1.08] tracking-tight text-[#081c16] dark:text-emerald-50 sm:text-6xl">
               About
               <span className="mt-2 block text-[#287641] dark:text-emerald-400">
-                LWAR Group
+                LWAR Companies
               </span>
             </h1>
 
@@ -390,7 +390,7 @@ export default function AboutPage() {
             <div className="mt-5 h-1 w-12 rounded-full bg-[#287641] dark:bg-emerald-400" />
 
             <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 dark:text-emerald-100/60">
-              LWAR Group is an integrated ecosystem combining technology,
+              LWAR Companies is an integrated ecosystem combining technology,
               artificial intelligence, digital growth, advanced education, and
               research to build intelligent systems and empower people.
             </p>
@@ -399,7 +399,7 @@ export default function AboutPage() {
               href="#our-purpose"
               className="mt-8 inline-flex items-center rounded-lg bg-[#0b6740] px-7 py-4 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0e7d4f] dark:bg-[#1a9b5c] dark:hover:bg-[#22b06a]"
             >
-              Discover LWAR Group
+              Discover LWAR Companies
               <span className="ml-3">→</span>
             </a>
           </div>
@@ -412,7 +412,7 @@ export default function AboutPage() {
 
             <Image
               src="/images/about/about-p.png"
-              alt="LWAR Group panda representing technology, education, intelligence, research, and growth"
+              alt="LWAR Companies panda representing technology, education, intelligence, research, and growth"
               width={1000}
               height={800}
               priority
@@ -529,7 +529,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-emerald-100/60">
-              These values guide how LWAR Group works with clients, partners,
+              These values guide how LWAR Companies works with clients, partners,
               institutions, communities, and one another.
             </p>
           </div>
@@ -651,7 +651,7 @@ export default function AboutPage() {
               <div className="relative h-64 w-64 overflow-hidden rounded-full border-8 border-white shadow-xl dark:border-[#0d2418]">
                 <Image
                   src="/images/leadership/founder.png"
-                  alt="Abdur Rehman, Founder and Group Director of LWAR Group"
+                  alt="Abdur Rehman, Founder and Group Director of LWAR Companies"
                   fill
                   sizes="256px"
                   className="object-cover object-top"
@@ -669,7 +669,7 @@ export default function AboutPage() {
               </h2>
 
               <p className="mt-6 leading-8 text-slate-600 dark:text-emerald-100/60">
-                LWAR Group was founded with a vision to create an ecosystem
+                LWAR Companies was founded with a vision to create an ecosystem
                 that helps people and organizations grow through intelligent
                 solutions, future-ready education, and meaningful research.
               </p>
@@ -713,7 +713,7 @@ export default function AboutPage() {
 
             <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-emerald-100/60">
               The roadmap provides a flexible direction for the future
-              development of LWAR Group.
+              development of LWAR Companies.
             </p>
           </div>
 

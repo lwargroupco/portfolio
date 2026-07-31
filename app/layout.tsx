@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.lwar.group"),
 
   title: {
-    default: "LWAR Group",
-    template: "%s | LWAR Group",
+    default: "LWAR Companies",
+    template: "%s | LWAR Companies",
   },
 
   description:
-    "LWAR Group connects technology, artificial intelligence, digital growth, education, and research to engineer intelligent transformation.",
+    "LWAR Companies connects technology, artificial intelligence, digital growth, education, and research to engineer intelligent transformation.",
 
   keywords: [
-    "LWAR Group",
+    "LWAR Companies",
     "technology",
     "artificial intelligence",
     "digital transformation",
@@ -37,33 +37,33 @@ export const metadata: Metadata = {
 
   authors: [
     {
-      name: "LWAR Group",
+      name: "LWAR Companies",
     },
   ],
 
-  creator: "LWAR Group",
-  publisher: "LWAR Group",
+  creator: "LWAR Companies",
+  publisher: "LWAR Companies",
 
   openGraph: {
-    title: "LWAR Group",
+    title: "LWAR Companies",
     description:
       "Engineering Intelligence. Enabling Transformation.",
     type: "website",
     locale: "en_US",
-    siteName: "LWAR Group",
+    siteName: "LWAR Companies",
     images: [
       {
         url: "/images/brand/lwar-logo.png",
         width: 1200,
         height: 630,
-        alt: "LWAR Group",
+        alt: "LWAR Companies",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "LWAR Group",
+    title: "LWAR Companies",
     description:
       "Engineering Intelligence. Enabling Transformation.",
     images: ["/images/brand/lwar-logo.png"],

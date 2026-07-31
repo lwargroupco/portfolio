@@ -7,7 +7,7 @@ import NetworkField from "../../components/ui/NetworkField";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore LWAR Group services and the organizations, institutions, professionals, and communities we serve.",
+    "Explore LWAR Companies services and the organizations, institutions, professionals, and communities we serve.",
 };
 
 const serviceCategories = [
@@ -269,7 +269,7 @@ export default function ServicesPage() {
             <div className="mt-5 h-1 w-12 rounded-full bg-[#287641] dark:bg-emerald-400" />
 
             <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 dark:text-emerald-100/60">
-              LWAR Group combines technology, artificial intelligence,
+              LWAR Companies combines technology, artificial intelligence,
               strategic guidance, education, and research to help
               organizations solve complex challenges and build sustainable
               capability.
@@ -289,7 +289,7 @@ export default function ServicesPage() {
 
             <Image
               src="/images/services/services-panda.png"
-              alt="LWAR Group panda presenting intelligent services and solutions"
+              alt="LWAR Companies panda presenting intelligent services and solutions"
               width={1000}
               height={800}
               priority

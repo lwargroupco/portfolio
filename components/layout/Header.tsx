@@ -39,13 +39,13 @@ export default function Header() {
         {/* Logo */}
         <Link
           href="/"
-          aria-label="LWAR Group home"
+          aria-label="LWAR Companies home"
           onClick={closeMenu}
           className="flex shrink-0 items-center"
         >
           <Image
             src="/images/brand/lwar-logo.png"
-            alt="LWAR Group"
+            alt="LWAR Companies"
             width={230}
             height={110}
             priority

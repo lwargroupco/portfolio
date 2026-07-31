@@ -19,7 +19,7 @@ import NetworkField from "../../components/ui/NetworkField";
 export const metadata: Metadata = {
   title: "Strategic Verticals",
   description:
-    "Explore the five strategic verticals of LWAR Group: Technologies, Intelligence, Digital, Academy, and Research & Think Tank.",
+    "Explore the five strategic verticals of LWAR Companies: Technologies, Intelligence, Digital, Academy, and Research & Think Tank.",
 };
 
 const verticals = [
@@ -292,7 +292,7 @@ export default function VerticalsPage() {
 
       <Image
         src="/images/verticals/verticals_panda.png"
-        alt="LWAR Group panda representing five strategic verticals"
+        alt="LWAR Companies panda representing five strategic verticals"
         width={800}
         height={800}
         priority
@@ -320,7 +320,7 @@ export default function VerticalsPage() {
 
             <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-emerald-100/60">
               Each vertical provides focused capabilities while collaborating
-              across the complete LWAR Group ecosystem.
+              across the complete LWAR Companies ecosystem.
             </p>
           </div>
 

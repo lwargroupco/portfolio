@@ -1,6 +1,6 @@
 const WHATSAPP_NUMBER = "923144010027";
 const PREFILLED_MESSAGE =
-  "Hi LWAR Group, I'd like to know more about your services.";
+  "Hi LWAR Companies, I'd like to know more about your services.";
 
 export default function WhatsAppButton() {
   const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -12,7 +12,7 @@ export default function WhatsAppButton() {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with LWAR Group on WhatsApp"
+      aria-label="Chat with LWAR Companies on WhatsApp"
       className="group fixed bottom-5 right-5 z-50 flex items-center gap-3 sm:bottom-6 sm:right-6"
     >
       <span className="pointer-events-none hidden max-w-0 overflow-hidden whitespace-nowrap rounded-lg bg-[#0d2b1c] px-0 py-2.5 text-sm font-semibold text-white opacity-0 shadow-lg transition-all duration-300 group-hover:max-w-xs group-hover:px-4 group-hover:opacity-100 sm:inline-block">

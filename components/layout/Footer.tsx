@@ -15,12 +15,12 @@ export default function Footer() {
         <div className="sm:col-span-2 lg:col-span-1">
           <Link
             href="/"
-            aria-label="LWAR Group home"
+            aria-label="LWAR Companies home"
             className="inline-flex max-w-full rounded-2xl bg-white p-3"
           >
             <Image
               src="/images/brand/lwar-logo.png"
-              alt="LWAR Group"
+              alt="LWAR Companies"
               width={230}
               height={110}
               sizes="(max-width: 640px) 150px, 190px"
@@ -164,7 +164,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-3 px-4 py-6 text-center text-xs text-emerald-50/60 sm:px-6 md:flex-row md:items-center md:justify-between md:text-left lg:px-8">
           <p>
-            © {new Date().getFullYear()} LWAR Group. All rights reserved.
+            © {new Date().getFullYear()} LWAR Companies. All rights reserved.
           </p>
 
           <p>Engineering Intelligence. Enabling Transformation.</p>

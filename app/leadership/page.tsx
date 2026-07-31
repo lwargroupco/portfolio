@@ -10,7 +10,7 @@ import TeamSlider, {
 export const metadata: Metadata = {
   title: "Leadership",
   description:
-    "Learn about the leadership vision, principles, structure, and founder of LWAR Group.",
+    "Learn about the leadership vision, principles, structure, and founder of LWAR Companies.",
 };
 
 const leadershipPrinciples = [
@@ -134,7 +134,7 @@ const leadershipResponsibilities = [
     number: "01",
     title: "Strategic Direction",
     description:
-      "Clarifying priorities, aligning resources, and guiding LWAR Group toward sustainable progress.",
+      "Clarifying priorities, aligning resources, and guiding LWAR Companies toward sustainable progress.",
   },
   {
     number: "02",
@@ -168,11 +168,11 @@ const founderCapabilities = [
 const teamMembers: TeamMember[] = [
   {
     role: "Founder & Group Director",
-    vertical: "LWAR Group",
+    vertical: "LWAR Companies",
     name: "Abdur Rehman",
     confirmed: true,
     description:
-      "Leading LWAR Group with a focus on technology, intelligence, education, research, and responsible transformation.",
+      "Leading LWAR Companies with a focus on technology, intelligence, education, research, and responsible transformation.",
     tags: founderCapabilities,
     color: "#0b6740",
     photo: "/images/leadership/founder.png",
@@ -236,7 +236,7 @@ export default function LeadershipPage() {
             <div className="mt-5 h-1 w-12 rounded-full bg-[#287641] dark:bg-emerald-400" />
 
             <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 dark:text-emerald-100/60">
-              LWAR Group is guided by purpose, specialist expertise, and a
+              LWAR Companies is guided by purpose, specialist expertise, and a
               shared commitment to intelligent, responsible, and human-centred
               transformation.
             </p>
@@ -267,7 +267,7 @@ export default function LeadershipPage() {
 
             <Image
               src="/images/leadership/leadership.png"
-              alt="LWAR Group panda representing purposeful and collaborative leadership"
+              alt="LWAR Companies panda representing purposeful and collaborative leadership"
               width={1024}
               height={1536}
               priority
@@ -293,7 +293,7 @@ export default function LeadershipPage() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/15 bg-white/10 shadow-xl">
                 <Image
                   src="/images/leadership/founder.png"
-                  alt="Abdur Rehman, Founder and Group Director of LWAR Group"
+                  alt="Abdur Rehman, Founder and Group Director of LWAR Companies"
                   fill
                   priority
                   sizes="(max-width: 640px) 85vw, (max-width: 1280px) 210px, 220px"
@@ -315,7 +315,7 @@ export default function LeadershipPage() {
               <div className="mt-6 h-1 w-14 rounded-full bg-green-300" />
 
               <p className="mt-6 text-sm leading-7 text-emerald-50/75">
-                Leading LWAR Group with a focus on technology, intelligence,
+                Leading LWAR Companies with a focus on technology, intelligence,
                 education, research, and responsible transformation.
               </p>
             </div>
@@ -352,7 +352,7 @@ export default function LeadershipPage() {
             </h3>
 
             <p className="mt-7 max-w-3xl text-base leading-8 text-emerald-50/80">
-              I founded LWAR Group with the belief that technology,
+              I founded LWAR Companies with the belief that technology,
               intelligence, education, and research can transform not only
               organizations, but lives. Our mission is to build an ecosystem
               where people learn, innovate, and grow together.
@@ -370,7 +370,7 @@ export default function LeadershipPage() {
               </p>
 
               <p className="mt-1 text-sm text-emerald-50/60">
-                Founder &amp; Group Director, LWAR Group
+                Founder &amp; Group Director, LWAR Companies
               </p>
             </div>
           </div>
@@ -393,7 +393,7 @@ export default function LeadershipPage() {
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-emerald-100/60">
-              These principles define how LWAR Group leads teams, makes
+              These principles define how LWAR Companies leads teams, makes
               decisions, and creates trusted partnerships.
             </p>
           </div>
@@ -589,7 +589,7 @@ export default function LeadershipPage() {
             </p>
 
             <h2 className="mt-4 text-4xl font-black tracking-tight text-[#073b27] dark:text-emerald-50 sm:text-5xl">
-              The people behind LWAR Group
+              The people behind LWAR Companies
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-emerald-100/60">
@@ -614,7 +614,7 @@ export default function LeadershipPage() {
       </h2>
 
       <p className="mt-4 leading-7 text-emerald-50/75">
-        Connect with LWAR Group to explore collaboration, learning, and
+        Connect with LWAR Companies to explore collaboration, learning, and
         meaningful transformation.
       </p>
     </div>

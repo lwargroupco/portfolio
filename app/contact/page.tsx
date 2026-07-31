@@ -24,7 +24,7 @@ import SectionTitle from "../../components/ui/SectionTitle";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact LWAR Group about projects, partnerships, training, research collaboration, speaking, or general inquiries.",
+    "Contact LWAR Companies about projects, partnerships, training, research collaboration, speaking, or general inquiries.",
 };
 
 const benefits = [
@@ -92,9 +92,9 @@ export default function ContactPage() {
         title="Contact"
         highlightedTitle="Us"
         subtitle="Let’s build intelligent solutions and meaningful impact—together."
-        description="Whether you have a question, a project in mind, or want to explore partnership opportunities, the LWAR Group team is ready to help."
+        description="Whether you have a question, a project in mind, or want to explore partnership opportunities, the LWAR Companies team is ready to help."
         imageSrc="/images/contact/contact-panda.png"
-        imageAlt="LWAR Group panda welcoming visitors to contact the organization"
+        imageAlt="LWAR Companies panda welcoming visitors to contact the organization"
       />
 
       <section className="relative z-10 -mt-10 px-5 sm:px-8">
@@ -234,7 +234,7 @@ export default function ContactPage() {
           <SectionTitle
             eyebrow="How Can We Help?"
             title="Choose the reason for your inquiry"
-            description="This helps our team route your message to the right part of LWAR Group."
+            description="This helps our team route your message to the right part of LWAR Companies."
           />
 
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">

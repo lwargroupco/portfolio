@@ -4,7 +4,7 @@ import { Resend } from "resend";
 
 const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "info@lwargroup.com";
 const CONTACT_FROM_EMAIL =
-  process.env.CONTACT_FROM_EMAIL ?? "LWAR Group Website <onboarding@resend.dev>";
+  process.env.CONTACT_FROM_EMAIL ?? "LWAR Companies Website <onboarding@resend.dev>";
 
 export type ContactFormState = {
   status: "idle" | "success" | "error";

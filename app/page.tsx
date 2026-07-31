@@ -5,9 +5,9 @@ import Link from "next/link";
 import NetworkField from "../components/ui/NetworkField";
 
 export const metadata: Metadata = {
-  title: "LWAR Group",
+  title: "LWAR Companies",
   description:
-    "LWAR Group connects technology, artificial intelligence, digital growth, education, and research to engineer intelligent transformation.",
+    "LWAR Companies connects technology, artificial intelligence, digital growth, education, and research to engineer intelligent transformation.",
 };
 
 type CardItem = {
@@ -309,7 +309,7 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-7 max-w-xl text-base leading-8 text-slate-600 dark:text-emerald-100/60 sm:text-lg">
-              LWAR Group connects technology, artificial intelligence, digital
+              LWAR Companies connects technology, artificial intelligence, digital
               growth, education, and research to build intelligent systems,
               empower people, and create meaningful progress.
             </p>
@@ -349,7 +349,7 @@ export default function HomePage() {
 
             <Image
               src="/images/home/h-panda.png"
-              alt="LWAR Group panda representing technology, education, intelligence, research, and growth"
+              alt="LWAR Companies panda representing technology, education, intelligence, research, and growth"
               width={1000}
               height={800}
               priority
@@ -367,7 +367,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#287641] dark:text-emerald-400">
-              About LWAR Group
+              About LWAR Companies
             </p>
 
             <h2 className="mt-5 text-3xl font-black leading-tight tracking-tight text-[#073b27] dark:text-emerald-50 sm:text-4xl lg:text-5xl">
@@ -387,7 +387,7 @@ export default function HomePage() {
             </p>
 
             <p className="mt-5 text-base leading-8 text-slate-600 dark:text-emerald-100/60">
-              LWAR Group brings these capabilities together within one
+              LWAR Companies brings these capabilities together within one
               integrated, collaborative, and human-centred ecosystem.
             </p>
 
@@ -408,7 +408,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Our Five Strategic Verticals"
             title="Specialist capabilities within one connected ecosystem"
-            description="Each vertical provides focused expertise while collaborating across LWAR Group."
+            description="Each vertical provides focused expertise while collaborating across LWAR Companies."
           />
 
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
@@ -570,7 +570,7 @@ export default function HomePage() {
             </h2>
 
             <p className="mt-4 text-base leading-7 text-emerald-50/75">
-              Connect with LWAR Group to explore technology, education,
+              Connect with LWAR Companies to explore technology, education,
               research, digital growth, or strategic collaboration.
             </p>
           </div>
