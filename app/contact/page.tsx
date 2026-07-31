@@ -164,7 +164,7 @@ export default function ContactPage() {
                     </h3>
 
                     <p className="mt-1 text-sm text-slate-600 dark:text-emerald-100/60">
-                      Lahore, Punjab, Pakistan
+                      Sialkot, Punjab, Pakistan
                     </p>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ export default function ContactPage() {
                       href="mailto:info@lwar.group"
                       className="mt-1 block text-sm text-slate-600 hover:text-[#075031] dark:text-emerald-100/60 dark:hover:text-emerald-400"
                     >
-                      info@lwar.group
+                      info@lwargroup.com
                     </a>
                   </div>
                 </div>
