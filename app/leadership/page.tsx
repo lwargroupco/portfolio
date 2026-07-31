@@ -101,6 +101,9 @@ const leadershipAreas: LeadershipArea[] = [
       "Directing digital strategy, branding, content, analytics, customer experience, and sustainable growth.",
     icon: "/images/icons/verticals/digital-growth.png",
     color: "#3b8738",
+    photo: "/images/leadership/adil.png",
+    confirmedName: "Adil Maqsood",
+    confirmedRole: "Digital Growth Lead",
   },
   {
     number: "04",
